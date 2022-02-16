@@ -6,27 +6,44 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object CharacterModule {
-
     @Provides
     @Singleton
-    fun provideCharacterApi(builder: Retrofit.Builder): CharacterApi{
-        return builder
+    fun provideOkHttpClient(): OkHttpClient {
+        return OkHttpClient
+            .Builder()
+            .readTimeout(15, TimeUnit.SECONDS)
+            .connectTimeout(15, TimeUnit.SECONDS)
             .build()
-            .create(CharacterApi::class.java)
     }
 
     @Provides
     @Singleton
-    fun provideRetrofit(): Retrofit.Builder{
+    fun provideConverterFactory(): GsonConverterFactory =
+        GsonConverterFactory.create()
+
+    @Provides
+    @Singleton
+    fun provideRetrofit(
+        okHttpClient: OkHttpClient, gsonConverterFactory: GsonConverterFactory
+    ): Retrofit{
         return Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
+            .client(okHttpClient)
+            .addConverterFactory(gsonConverterFactory)
+            .build()
     }
+
+    @Provides
+    @Singleton
+    fun provideCharacterApi(retrofit: Retrofit): CharacterApi =
+        retrofit.create(CharacterApi::class.java)
 }
