@@ -14,7 +14,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberImagePainter
-import com.example.rickymorty.data.entity.Characters
+import com.example.rickymorty.data.entity.CharacterData
 import com.example.rickymorty.viewmodel.CharacterViewModel
 
 @Composable
@@ -33,13 +33,13 @@ fun MainScreen(){
                 )
             }
         }
-        items(state){characters: Characters ->
+        items(state){characters: CharacterData ->
             ImageCard(characters = characters)
         }
     }
 }
 @Composable
-fun ImageCard(characters: Characters){
+fun ImageCard(characters: CharacterData){
     val image = rememberImagePainter(data = characters.image)
     
     Card(
@@ -62,7 +62,8 @@ fun ImageCard(characters: Characters){
                     .fillMaxWidth()
                     .padding(4.dp)) {
                     Text(text = "Name: ${characters.name}")
-                    Text(text = "Actor: ${characters.origin}")
+                    Text(text = "Actor: ${characters.species}")
+                    Text(text = "Origin ${characters.species}")
                     
                 }
             }
