@@ -76,10 +76,8 @@ dependencies {
 
     //Retrofit and MOSHI
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
     implementation "com.squareup.okhttp3:okhttp:5.0.0-alpha.2"
-    implementation "com.squareup.moshi:moshi-kotlin:$moshi_version"
-    kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
 
     //Coil Compose
     implementation("io.coil-kt:coil-compose:1.4.0")
