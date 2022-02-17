@@ -46,7 +46,7 @@ fun ImageCard(characters: CharacterData){
         shape = MaterialTheme.shapes.medium,
         modifier = Modifier.padding(16.dp)
     ) {
-        Box() {
+        Box {
             Image(
                 painter = image,
                 contentDescription = null,
