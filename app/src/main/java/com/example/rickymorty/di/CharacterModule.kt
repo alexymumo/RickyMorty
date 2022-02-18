@@ -21,20 +21,20 @@ import javax.inject.Singleton
 @Module
 object CharacterModule {
 
-    @Provides
     @Singleton
+    @Provides
     fun provideBaseUrl(): String{
         return BASE_URL
     }
 
-    @Provides
     @Singleton
+    @Provides
     fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor{
         return HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
     }
 
-    @Provides
     @Singleton
+    @Provides
     fun provideOkHttpClient(interceptor: HttpLoggingInterceptor): OkHttpClient {
         val okHttpClient = OkHttpClient.Builder()
             .addInterceptor(interceptor)
@@ -45,14 +45,14 @@ object CharacterModule {
         return okHttpClient.build()
     }
 
-    @Provides
     @Singleton
+    @Provides
     fun provideConverterFactory(): Converter.Factory {
         return GsonConverterFactory.create()
     }
 
-    @Provides
     @Singleton
+    @Provides
     fun provideRetrofit(baseUrl:String,converter: Converter.Factory, okHttpClient: OkHttpClient): Retrofit{
         return Retrofit.Builder()
             .baseUrl(baseUrl)
@@ -61,13 +61,14 @@ object CharacterModule {
             .build()
     }
 
-    @Provides
     @Singleton
+    @Provides
     fun provideCharacterApi(retrofit: Retrofit): CharacterApi{
         return retrofit.create(CharacterApi::class.java)
     }
-    @Provides
+
     @Singleton
+    @Provides
     fun characterRepository(characterApi: CharacterApi): CharacterRepository{
         return CharacterRepository(characterApi)
     }
