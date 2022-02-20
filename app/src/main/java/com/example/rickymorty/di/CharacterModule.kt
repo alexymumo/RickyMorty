@@ -2,7 +2,6 @@ package com.example.rickymorty.di
 
 import com.example.rickymorty.data.network.CharacterApi
 import com.example.rickymorty.data.repository.CharacterRepository
-import com.example.rickymorty.utils.Constants
 import com.example.rickymorty.utils.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -23,53 +22,45 @@ object CharacterModule {
 
     @Singleton
     @Provides
-    fun provideBaseUrl(): String{
-        return BASE_URL
-    }
-
-    @Singleton
-    @Provides
-    fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor{
+    fun providesHttpLoggingInterceptor(): HttpLoggingInterceptor{
         return HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
     }
 
     @Singleton
     @Provides
-    fun provideOkHttpClient(interceptor: HttpLoggingInterceptor): OkHttpClient {
-        val okHttpClient = OkHttpClient.Builder()
-            .addInterceptor(interceptor)
-            .callTimeout(60, TimeUnit.SECONDS)
-            .connectTimeout(60, TimeUnit.SECONDS)
-            .readTimeout(60, TimeUnit.SECONDS)
-            .writeTimeout(60, TimeUnit.SECONDS)
-        return okHttpClient.build()
-    }
-
-    @Singleton
-    @Provides
-    fun provideConverterFactory(): Converter.Factory {
+    fun providesConverterFactory(): Converter.Factory {
         return GsonConverterFactory.create()
     }
 
     @Singleton
     @Provides
-    fun provideRetrofit(baseUrl:String,converter: Converter.Factory, okHttpClient: OkHttpClient): Retrofit{
-        return Retrofit.Builder()
-            .baseUrl(baseUrl)
-            .client(okHttpClient)
-            .addConverterFactory(converter)
+    fun providesOkHttpClient(loggingInterceptor: HttpLoggingInterceptor): OkHttpClient{
+        return OkHttpClient.Builder()
+            .addInterceptor(loggingInterceptor)
+            .callTimeout(30, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .writeTimeout(30, TimeUnit.SECONDS)
             .build()
     }
 
     @Singleton
     @Provides
-    fun provideCharacterApi(retrofit: Retrofit): CharacterApi{
-        return retrofit.create(CharacterApi::class.java)
+    fun providesRetrofit(gsonConverterFactory: Converter.Factory, okHttpClient: OkHttpClient): Retrofit{
+        return Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .client(okHttpClient)
+            .addConverterFactory(gsonConverterFactory)
+            .build()
+    }
+    @Singleton
+    @Provides
+    fun providesRepository(characterApi: CharacterApi): CharacterRepository {
+        return CharacterRepository(characterApi)
     }
 
     @Singleton
     @Provides
-    fun characterRepository(characterApi: CharacterApi): CharacterRepository{
-        return CharacterRepository(characterApi)
+    fun providesCharacterApi(retrofit: Retrofit): CharacterApi{
+        return retrofit.create(CharacterApi::class.java)
     }
 }

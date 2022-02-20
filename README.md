@@ -8,6 +8,7 @@
 -[Prerequisite](#prerequisite)
 -[Libraries](#libraries)
 -[Screeenshots](#screenshots)
+-[Helpful Resources](#helpful resources)
 
 ## Prerequisite
 -Inorder to run the application you need to [clone].
