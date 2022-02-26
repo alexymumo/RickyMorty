@@ -7,8 +7,9 @@ import com.example.rickymorty.data.entity.CharacterData
 import com.example.rickymorty.data.network.CharacterApi
 import retrofit2.HttpException
 import java.io.IOException
+import javax.inject.Inject
 
-class CharacterSource(private val characterApi: CharacterApi): PagingSource<Int, CharacterData>() {
+class CharacterSource @Inject constructor(private val characterApi: CharacterApi): PagingSource<Int, CharacterData>() {
     override fun getRefreshKey(state: PagingState<Int, CharacterData>): Int? {
         return state.anchorPosition
     }

@@ -12,7 +12,7 @@
 
 ## Prerequisite
 -Inorder to run the application you need to [clone].
--Install Android studio or Intellij Idea
+-Install Android studio
 
 ## Libraries
 - [Jetpack Compose](https://developer.android.com/jetpack) - Declarative way of building user interfaces(UI)
@@ -20,13 +20,11 @@
 - [Viewmodel](https://developer.android.com/topic/libraries/architecture/viewmodel) - Manage UI related data in  a lifecycle conscious way .
 - [Data Binding](https://developer.android.com/topic/libraries/data-binding) - Support library that allows binding of UI components in  layouts to data sources.
 - [Coil](https://coil) - Image Loading Library.
-- [Gson]() -
-- [Retrofit]() - 
-- []
+- [Retrofit](https://square.github.io/retrofit/) - A type-safe HTTP client for Android and Java.
 - [kotlinx.coroutines](https://github.com/Kotlin/kotlinx.coroutines) - Library Support for coroutines.
-- [Hilt](- [Jetpack](https://zaidzakir.medium.com/a-simple-android-app-using-mvvm-dagger-hilt-e9f45381f1bc) - Dependency Injection Library
-
+- [Hilt](https://zaidzakir.medium.com/a-simple-android-app-using-mvvm-dagger-hilt-e9f45381f1bc) - Dependency Injection Library
+- [Paging](https://developer.android.com/codelabs/android-paging#6) - Paging library makes it easier for you to load data incrementally and gracefully within your app's UI
 ## Screenshots
 <img src="/resources/architecture.png" width="300%">
 
- 
+## Helpful Resources
