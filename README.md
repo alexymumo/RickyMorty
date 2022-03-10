@@ -6,11 +6,17 @@
 
 ## Table of Contents
 - [Prerequisite](#prerequisite)
+<<<<<<< HEAD
 - [Architecture](#architecture)
 - [Libraries](#libraries)
 - [Screeenshots](#screenshots)
 - [HelpfulResources](#helpfulresources)
 <br>
+=======
+- [Libraries](#libraries)
+- [Screeenshots](#screenshots)
+- [HelpfulResources](#helpful resources)
+>>>>>>> origin/main
 
 ## Prerequisite
 - Inorder to run the application you need to [clone]().
