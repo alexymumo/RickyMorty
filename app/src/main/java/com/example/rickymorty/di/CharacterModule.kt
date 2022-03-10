@@ -3,10 +3,14 @@ package com.example.rickymorty.di
 import com.example.rickymorty.data.network.CharacterApi
 import com.example.rickymorty.data.repository.CharacterRepository
 import com.example.rickymorty.utils.Constants.BASE_URL
+import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import kotlinx.serialization.ExperimentalSerializationApi
+import kotlinx.serialization.json.Json
+import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Converter
@@ -20,6 +24,10 @@ import javax.inject.Singleton
 @Module
 object CharacterModule {
 
+    private val json = Json { ignoreUnknownKeys = true }
+
+    @ExperimentalSerializationApi
+    private val converter = json.asConverterFactory("application/json".toMediaType())
     @Singleton
     @Provides
     fun providesHttpLoggingInterceptor(): HttpLoggingInterceptor{
@@ -37,19 +45,20 @@ object CharacterModule {
     fun providesOkHttpClient(loggingInterceptor: HttpLoggingInterceptor): OkHttpClient{
         return OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
-            .callTimeout(30, TimeUnit.SECONDS)
+            .connectTimeout(30, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)
             .writeTimeout(30, TimeUnit.SECONDS)
             .build()
     }
 
+    @ExperimentalSerializationApi
     @Singleton
     @Provides
-    fun providesRetrofit(gsonConverterFactory: Converter.Factory, okHttpClient: OkHttpClient): Retrofit{
+    fun providesRetrofit(okHttpClient: OkHttpClient): Retrofit{
         return Retrofit.Builder()
+            .addConverterFactory(converter)
             .baseUrl(BASE_URL)
             .client(okHttpClient)
-            .addConverterFactory(gsonConverterFactory)
             .build()
     }
     @Singleton

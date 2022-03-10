@@ -3,11 +3,12 @@ buildscript {
     ext {
         compose_version = '1.0.1'
         hilt_version = "2.38.1"
+        kotlin_version = "1.5.21"
         coroutine_version = "1.5.0"
-        lifecycle_version = "2.4.0"
+        lifecycle_version = "2.4.1"
         retrofit_version = "2.9.0"
         loggingIntercepter_version = "5.0.0-alpha.2"
-        room_version = "2.4.1"
+        room_version = "2.4.2"
         paging_compose = "1.0.0-alpha14"
         navigation_animation = "0.21.3-beta"
         landscapist_coil="1.4.4"
@@ -19,8 +20,9 @@ buildscript {
     }
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.4"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+        classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

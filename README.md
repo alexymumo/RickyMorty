@@ -9,7 +9,7 @@
 - [Architecture](#architecture)
 - [Libraries](#libraries)
 - [Screeenshots](#screenshots)
-- [Helpful Resources](#helpful resources)
+- [HelpfulResources](#helpfulresources)
 <br>
 
 ## Prerequisite
