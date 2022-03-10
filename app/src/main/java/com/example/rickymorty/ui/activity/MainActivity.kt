@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.rickymorty.ui.composables.CharacterCard
+import com.example.rickymorty.ui.composables.CharacterInfo
 import com.example.rickymorty.ui.theme.RickyMortyTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -15,7 +16,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             RickyMortyTheme {
-                CharacterCard()
+                CharacterInfo()
             }
         }
     }
@@ -25,7 +26,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     RickyMortyTheme {
-        CharacterCard()
+        CharacterInfo()
     }
 }
 

@@ -1,20 +1,13 @@
 package com.example.rickymorty.data.repository
 
+import com.example.rickymorty.data.entity.Character
 import com.example.rickymorty.data.network.CharacterApi
 import javax.inject.Inject
 
-class CharacterRepository @Inject constructor(private val characterApi: CharacterApi) {
-    suspend fun getCharacters(page: Int) = characterApi.fetchCharacters(page)
-}
+class CharacterRepository @Inject constructor(
+    private val characterApi: CharacterApi) {
 
-/*
-fun getCharacters() : Flow<PagingData<CharacterData>> {
-
-    return Pager(
-        config = PagingConfig(enablePlaceholders = false, pageSize = 30),
-        pagingSourceFactory = {
-            CharacterSource(characterApi)
-        }
-    ).flow
+    suspend fun getCharacters(): List<Character> {
+        return characterApi.fetchCharacters()
+    }
 }
-*/
