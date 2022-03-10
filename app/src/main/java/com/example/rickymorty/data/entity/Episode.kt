@@ -1,6 +1,6 @@
 package com.example.rickymorty.data.entity
 
-data class Info(
+data class Episode(
     val count : Int,
     val pages: Int,
     val next: String,
