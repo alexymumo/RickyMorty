@@ -3,11 +3,11 @@ package com.example.rickymorty.ui.composables
 import androidx.compose.runtime.Composable
 
 @Composable
-private fun CharacterScreen() {
-
+fun CharacterDetails() {
 
 }
-
+/*
+   val characters = characterViewModel.characters.collectAsLazyPagingItems()
 
 //val characterViewModel = viewModel(modelClass = CharacterViewModel::class.java)
 
@@ -68,5 +68,5 @@ Card(
 }
 
  */
-
-
+*
+* */

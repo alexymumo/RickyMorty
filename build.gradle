@@ -8,6 +8,10 @@ buildscript {
         retrofit_version = "2.9.0"
         loggingIntercepter_version = "5.0.0-alpha.2"
         room_version = "2.4.1"
+        paging_compose = "1.0.0-alpha14"
+        navigation_animation = "0.21.3-beta"
+        landscapist_coil="1.4.4"
+        accompanist = "0.24.1-alpha"
     }
     repositories {
         google()
