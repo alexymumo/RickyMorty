@@ -1,4 +1,4 @@
-package com.example.rickymorty.data.entity
+package com.example.rickymorty.data.local.entities
 
 data class Episode(
     val count : Int,

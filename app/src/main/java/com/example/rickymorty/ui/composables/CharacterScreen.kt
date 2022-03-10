@@ -18,7 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberImagePainter
-import com.example.rickymorty.data.entity.Character
+import com.example.rickymorty.data.local.entities.Character
 import com.example.rickymorty.ui.theme.RickyMortyTheme
 import com.example.rickymorty.viewmodel.CharacterViewModel
 
@@ -38,7 +38,7 @@ fun CharacterInfo(){
             }
         }
         else {
-            items(state) { character: Character ->
+            items(state) { character : Character ->
                 CharacterCard(character = character)
             }
         }
@@ -63,46 +63,15 @@ fun CharacterCard(character: Character) {
                 Column(modifier = Modifier.padding(16.dp)) {
                     Text(text = "Name: ${character.name}", textAlign = TextAlign.Left, color = Color.Cyan)
                     Spacer(modifier = Modifier.padding(top = 5.dp))
-                    Text(text = "Origin: ${character.origin}", textAlign = TextAlign.Left, color = Color.Cyan)
+                    Text(text = "Origin: ${character.species}", textAlign = TextAlign.Left, color = Color.Cyan)
                     Spacer(modifier = Modifier.padding(top = 5.dp))
                     Text(text = "Gender: ${character.gender}", textAlign = TextAlign.Left, color = Color.Cyan)
                 }
             }
         }
     }
-
-
-    /*
-    Card(
-        modifier = Modifier
-            .padding(bottom = 5.dp, top = 5.dp, end = 5.dp, start = 5.dp)
-            .animateContentSize(),
-        shape = RoundedCornerShape(8.dp),
-        elevation = 16.dp
-    ) {
-        Box {
-            Image(
-                painterResource(id = R.drawable.ic_launcher_background),
-                contentDescription = null,
-                contentScale = ContentScale.FillBounds
-            )
-            Surface(
-                color = MaterialTheme.colors.surface,
-                contentColor = MaterialTheme.colors.primary
-            ) {
-                Column(modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(4.dp)
-                    .align(Alignment.BottomEnd)
-                ) {
-                    Text(text = "Name: ${character.name}")
-                    Text(text = "Origin: ${character.origin}")
-                    Text(text = "Gender: ${character.gender}")
-                }
-            }
-        }
-    }*/
 }
+
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {

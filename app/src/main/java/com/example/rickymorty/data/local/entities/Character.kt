@@ -1,4 +1,5 @@
-package com.example.rickymorty.data.entity
+package com.example.rickymorty.data.local.entities
+
 
 data class Character(
     val id: Int,
@@ -9,5 +10,6 @@ data class Character(
     val species: String,
     val origin: String
 )
+
 
 

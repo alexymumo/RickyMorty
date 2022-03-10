@@ -1,6 +1,6 @@
-package com.example.rickymorty.data.repository
+package com.example.rickymorty.data.local.repository
 
-import com.example.rickymorty.data.entity.Character
+import com.example.rickymorty.data.local.entities.Character
 import com.example.rickymorty.data.network.CharacterApi
 import javax.inject.Inject
 

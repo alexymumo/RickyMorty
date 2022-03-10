@@ -2,8 +2,8 @@ package com.example.rickymorty.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.rickymorty.data.entity.Character
-import com.example.rickymorty.data.repository.CharacterRepository
+import com.example.rickymorty.data.local.entities.Character
+import com.example.rickymorty.data.local.repository.CharacterRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
