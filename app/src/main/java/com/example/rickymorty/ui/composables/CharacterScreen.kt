@@ -1,5 +1,20 @@
 package com.example.rickymorty.ui.composables
 
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Card
+import androidx.compose.material.Scaffold
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.constraintlayout.compose.ConstraintLayout
+
+/*
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -38,8 +53,8 @@ fun CharacterInfo(){
             }
         }
         else {
-            items(state) { character: Character ->
-                CharacterCard(character = character)
+            //items(state) { character: Character ->
+              //  CharacterCard(character = character)
             }
         }
     }
@@ -47,7 +62,7 @@ fun CharacterInfo(){
 
 @Composable
 fun CharacterCard(character: Character) {
-    val image = rememberImagePainter(data = character.imageUrl)
+  // val image = rememberImagePainter(data = character.imageUrl)
     Column {
         Card(
             modifier = Modifier.padding(8.dp),
@@ -61,11 +76,11 @@ fun CharacterCard(character: Character) {
                     contentScale = ContentScale.Crop
                 )
                 Column(modifier = Modifier.padding(16.dp)) {
-                    Text(text = "Name: ${character.name}", textAlign = TextAlign.Left, color = Color.Cyan)
+                    //Text(text = "Name: ${character.name}", textAlign = TextAlign.Left, color = Color.Cyan)
                     Spacer(modifier = Modifier.padding(top = 5.dp))
-                    Text(text = "Origin: ${character.origin}", textAlign = TextAlign.Left, color = Color.Cyan)
+                    //Text(text = "Origin: ${character.origin}", textAlign = TextAlign.Left, color = Color.Cyan)
                     Spacer(modifier = Modifier.padding(top = 5.dp))
-                    Text(text = "Gender: ${character.gender}", textAlign = TextAlign.Left, color = Color.Cyan)
+                    //Text(text = "Gender: ${character.gender}", textAlign = TextAlign.Left, color = Color.Cyan)
                 }
             }
         }
@@ -110,6 +125,50 @@ fun DefaultPreview() {
         CharacterInfo()
     }
 }
+*/
 
+@Composable
+fun CharacterCard() {
+    Card(elevation = 20.dp,
+        backgroundColor = Color.Cyan,
+        modifier = Modifier
+            .padding(16.dp)
+            .clip(RoundedCornerShape(10.dp))
+            .height(250.dp)
+            .fillMaxWidth()
+    ) {
+        ConstraintLayout() {
+            
+        }
+    }
+}
+
+
+
+
+@Composable
+fun CharacterScreen(
+    openSearch: () -> Unit,
+    openFilters: () -> Unit
+) {
+    Scaffold(topBar = {
+        HomeAppBar(
+            title = "RickyMorty",
+            openSearch = openSearch,
+            openFilters = openFilters)
+    },
+        content = {}
+    )
+}
+
+
+@Preview(showBackground = true)
+@Composable
+fun CharacterScreenPreview(){
+    CharacterScreen(openSearch = { /*TODO*/ }) {
+
+    }
+
+}
 
 
