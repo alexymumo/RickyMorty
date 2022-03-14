@@ -6,6 +6,7 @@ import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
@@ -31,7 +32,7 @@ fun HomeAppBar(
             }
             IconButton(onClick = openFilters) {
                 Icon(
-                    imageVector = Icons.Filled.Email,
+                    imageVector = Icons.Filled.Favorite,
                     contentDescription = "Filter",
                     tint = Color.Cyan
                 )
