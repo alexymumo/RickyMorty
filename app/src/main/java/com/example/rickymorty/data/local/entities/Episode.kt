@@ -1,5 +1,8 @@
 package com.example.rickymorty.data.local.entities
 
+import com.squareup.moshi.JsonClass
+
+@JsonClass(generateAdapter = true)
 data class Episode(
     val id: Int,
     val name: String,

@@ -9,7 +9,7 @@ import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
 
 @Module
@@ -26,13 +26,16 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun providesRetrofit(okHttpClient: OkHttpClient): Retrofit {
+    fun providesRetrofit(okHttpClient: OkHttpClient, moshiConverterFactory: MoshiConverterFactory): Retrofit {
         return Retrofit.Builder()
             .client(okHttpClient)
             .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(moshiConverterFactory)
             .build()
     }
+    @Singleton
+    @Provides
+    fun providesMoshiConverter(): MoshiConverterFactory = MoshiConverterFactory.create()
 
     @Singleton
     @Provides
