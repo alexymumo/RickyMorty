@@ -31,6 +31,12 @@ import kotlinx.coroutines.flow.Flow
 
 
 @Composable
+fun HomeScreen() {
+
+}
+
+
+@Composable
 fun CharacterCard() {
     Card(elevation = 20.dp,
         backgroundColor = Color.Cyan,
@@ -116,11 +122,13 @@ fun CharacterListing(characters: Flow<PagingData<Character>>) {
             when {
                 loadState.refresh is
                         LoadState.Loading -> {
-
+                            item { CharacterLoading() }
+                            item { CharacterLoading() }
                         }
                 loadState.append is
                         LoadState.Loading -> {
-
+                            item { CharacterLoading() }
+                            item { CharacterLoading() }
                         }
                 loadState.refresh is
                         LoadState.Error -> {}
@@ -131,7 +139,6 @@ fun CharacterListing(characters: Flow<PagingData<Character>>) {
     })
 }
 
-/*Progress bar*/
 @Composable
 fun CharacterLoading() {
     CircularProgressIndicator(
@@ -144,17 +151,18 @@ fun CharacterLoading() {
     )
 }
 
-/*Previews*/
+
 @Preview(showBackground = true)
 @Composable
 fun CharacterLoadingPreview() {
     CharacterLoading()
 }
 
+@ExperimentalFoundationApi
 @Preview(showBackground = true)
 @Composable
 fun CharacterListingPreview() {
-   // CharacterListing()
+    //CharacterListing(characters = "Alex")
 }
 
 @Preview(showBackground = true)

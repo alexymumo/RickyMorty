@@ -14,7 +14,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             RickyMortyTheme {
-                //CharacterInfo()
+
             }
         }
     }
@@ -24,7 +24,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     RickyMortyTheme {
-        //CharacterInfo()
     }
 }
 

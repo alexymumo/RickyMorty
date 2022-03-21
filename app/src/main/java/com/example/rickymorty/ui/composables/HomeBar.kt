@@ -5,12 +5,12 @@ import androidx.compose.material.IconButton
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import java.lang.reflect.Modifier
 
 @Composable
 fun HomeAppBar(
@@ -34,7 +34,7 @@ fun HomeAppBar(
                 Icon(
                     imageVector = Icons.Filled.Favorite,
                     contentDescription = "Filter",
-                    tint = Color.Cyan
+                    tint = Color.Blue
                 )
             }
         }
