@@ -6,9 +6,6 @@ import retrofit2.http.Query
 
 interface CharacterApi {
 
-    //@Headers("Content-Type: application/json")
     @GET("character")
-    suspend fun fetchCharacters(
-        @Query("page") name:String? = null
-    ): List<Character>
+    suspend fun fetchCharacters(@Query("page") name:String? = null): List<Character>
 }
