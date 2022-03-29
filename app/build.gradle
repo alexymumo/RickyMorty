@@ -98,19 +98,16 @@ dependencies {
     //Timber
     implementation 'com.jakewharton.timber:timber:5.0.1'
 
-<<<<<<< HEAD
     // Navigation
     implementation "com.google.accompanist:accompanist-navigation-animation:$accompanist"
 
     // Koin
     implementation "org.koin:koin-android:2.0.1"
-=======
     implementation "com.google.accompanist:accompanist-navigation-animation:$accompanist"
 
     // Moshi
     kapt("com.squareup.moshi:moshi-kotlin-codegen:1.9.3")
     implementation("com.squareup.moshi:moshi:1.9.3")
->>>>>>> compose
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'

@@ -1,11 +1,9 @@
 package com.example.rickymorty.ui.composables
 
-<<<<<<< HEAD
 import androidx.compose.foundation.ExperimentalFoundationApi
-=======
+
 import android.content.Context
 import androidx.compose.animation.fadeIn
->>>>>>> compose
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -17,18 +15,14 @@ import androidx.compose.material.Card
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-<<<<<<< HEAD
-=======
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
->>>>>>> compose
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-<<<<<<< HEAD
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -41,13 +35,14 @@ import androidx.paging.compose.collectAsLazyPagingItems
 import coil.compose.rememberImagePainter
 import com.example.rickymorty.R
 import com.example.rickymorty.data.entity.Character
+import com.example.rickymorty.data.local.entities.Characters
+import com.example.rickymorty.ui.theme.RickyMortyTheme
 import kotlinx.coroutines.flow.Flow
 
 
 @Composable
 fun HomeScreen() {
 
-=======
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -81,12 +76,11 @@ fun CharacterInfo(){
             }
         }
     }
->>>>>>> compose
 }
 
 
 @Composable
-<<<<<<< HEAD
+
 fun CharacterCard() {
     Card(elevation = 20.dp,
         backgroundColor = Color.Cyan,
@@ -153,8 +147,7 @@ fun CharacterCard() {
                     modifier = Modifier.padding(8.dp),
                     fontSize = 18.sp
                 )
-=======
-fun CharacterCard(character: Character) {
+fun CharacterCard(character: Characters) {
     val image = rememberImagePainter(data = character.image)
     Column {
         Card(
@@ -175,13 +168,11 @@ fun CharacterCard(character: Character) {
                     Spacer(modifier = Modifier.padding(top = 5.dp))
                     Text(text = "Gender: ${character.gender}", textAlign = TextAlign.Left, color = Color.Cyan)
                 }
->>>>>>> compose
             }
         }
     }
 }
 
-<<<<<<< HEAD
 
 @ExperimentalFoundationApi
 @Composable
@@ -243,13 +234,12 @@ fun CharacterListingPreview() {
 @Composable
 fun CharacterCardPreview() {
     CharacterCard()
-=======
+
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     RickyMortyTheme {
     }
->>>>>>> compose
 }
 
 
