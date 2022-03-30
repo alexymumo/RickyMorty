@@ -56,6 +56,9 @@ dependencies {
     // Paging
     implementation "androidx.paging:paging-compose:1.0.0-alpha14"
 
+    // Koin
+    implementation "io.insert-koin:koin-android:$koin_version"
+
     // LiveData components
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
     implementation "android.arch.lifecycle:extensions:1.1.1"
@@ -97,11 +100,6 @@ dependencies {
 
     // Navigation
     implementation "com.google.accompanist:accompanist-navigation-animation:$accompanist"
-
-    // Koin
-    implementation "org.koin:koin-android:2.0.1"
-    implementation "com.google.accompanist:accompanist-navigation-animation:$accompanist"
-
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
