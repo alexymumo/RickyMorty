@@ -2,8 +2,6 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'dagger.hilt.android.plugin'
-    id 'kotlin-parcelize'
 }
 
 android {
@@ -51,14 +49,12 @@ android {
 }
 
 dependencies {
+
+    implementation project(":common")
+    implementation project(":domain")
+
     // Paging
     implementation "androidx.paging:paging-compose:1.0.0-alpha14"
-
-    //Hilt
-    implementation "com.google.dagger:hilt-android:$hilt_version"
-    kapt "com.google.dagger:hilt-compiler:$hilt_version"
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
-
 
     // LiveData components
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
@@ -66,6 +62,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
     implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
 
+    //Navigation
     implementation "androidx.navigation:navigation-compose:2.5.0-alpha03"
     implementation "androidx.compose.runtime:runtime-livedata:$compose_version"
     implementation "androidx.constraintlayout:constraintlayout-compose:1.0.0"
@@ -105,9 +102,6 @@ dependencies {
     implementation "org.koin:koin-android:2.0.1"
     implementation "com.google.accompanist:accompanist-navigation-animation:$accompanist"
 
-    // Moshi
-    kapt("com.squareup.moshi:moshi-kotlin-codegen:1.9.3")
-    implementation("com.squareup.moshi:moshi:1.9.3")
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'

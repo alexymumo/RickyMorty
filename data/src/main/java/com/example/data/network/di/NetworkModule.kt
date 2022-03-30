@@ -1,5 +1,6 @@
 package com.example.data.network.di
 
+import com.example.common.Constants.BASE_URL
 import com.example.data.network.api.Api
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -11,7 +12,7 @@ import java.util.concurrent.TimeUnit
 val networkModule = module {
     single {
         Retrofit.Builder()
-            .baseUrl("https")
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(provideOkHttp())
             .build()
