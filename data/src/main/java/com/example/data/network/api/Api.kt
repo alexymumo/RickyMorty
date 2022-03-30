@@ -9,5 +9,6 @@ interface Api {
     @GET("character")
     suspend fun fetchCharacters(
         @Query("page") page: Int,
+        @Query("name") name: String? = null
     ): CharacterDto
 }
