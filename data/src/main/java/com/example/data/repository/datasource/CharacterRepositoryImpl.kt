@@ -1,7 +1,7 @@
 package com.example.data.repository.datasource
 
 import android.net.Uri
-import androidx.paging.*
+import androidx.paging.* // ktlint-disable no-wildcard-imports
 import com.example.data.network.api.Api
 import com.example.data.repository.mappers.toCharacter
 import com.example.domain.models.Character
