@@ -1,4 +1,4 @@
-package com.example.data.network.utils
+package com.example.rickymorty.data.network.utils
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

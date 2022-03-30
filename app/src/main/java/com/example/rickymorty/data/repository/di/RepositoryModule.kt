@@ -1,7 +1,7 @@
-package com.example.data.repository.di
+package com.example.rickymorty.data.repository.di
 
-import com.example.data.repository.datasource.CharacterRepositoryImpl
-import com.example.domain.repositories.CharacterRepository
+import com.example.rickymorty.data.repository.datasource.CharacterRepositoryImpl
+import com.example.rickymorty.domain.repositories.CharacterRepository
 import org.koin.dsl.module
 
 val repositoryModule = module {

@@ -1,4 +1,4 @@
-package com.example.domain.models
+package com.example.rickymorty.domain.models
 
 data class Character(
     val id: Int,

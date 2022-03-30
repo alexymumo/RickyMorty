@@ -1,4 +1,4 @@
-package com.example.data.network.models
+package com.example.rickymorty.data.network.models
 
 data class CharacterListDto(
     val id: Int,

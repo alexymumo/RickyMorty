@@ -1,7 +1,7 @@
 package com.example.rickymorty.data.network.di
 
-import com.example.common.Constants.BASE_URL
-import com.example.data.network.api.Api
+import com.example.rickymorty.data.network.api.Api
+import com.example.rickymorty.data.network.utils.Constants.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module

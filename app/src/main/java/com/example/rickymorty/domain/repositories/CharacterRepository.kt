@@ -1,7 +1,7 @@
-package com.example.domain.repositories
+package com.example.rickymorty.domain.repositories
 
 import androidx.paging.PagingData
-import com.example.domain.models.Character
+import com.example.rickymorty.domain.models.Character
 import kotlinx.coroutines.flow.Flow
 
 interface CharacterRepository {

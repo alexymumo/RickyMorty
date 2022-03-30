@@ -1,6 +1,6 @@
-package com.example.data.network.api
+package com.example.rickymorty.data.network.api
 
-import com.example.data.network.models.CharacterDto
+import com.example.rickymorty.data.network.models.CharacterDto
 import retrofit2.http.GET
 import retrofit2.http.Query
 

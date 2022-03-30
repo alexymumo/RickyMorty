@@ -1,11 +1,11 @@
-package com.example.data.repository.datasource
+package com.example.rickymorty.data.repository.datasource
 
 import android.net.Uri
 import androidx.paging.* // ktlint-disable no-wildcard-imports
-import com.example.data.network.api.Api
-import com.example.data.repository.mappers.toCharacter
-import com.example.domain.models.Character
-import com.example.domain.repositories.CharacterRepository
+import com.example.rickymorty.data.repository.mappers.toCharacter
+import com.example.rickymorty.data.network.api.Api
+import com.example.rickymorty.domain.models.Character
+import com.example.rickymorty.domain.repositories.CharacterRepository
 import kotlinx.coroutines.flow.Flow
 
 class CharacterRepositoryImpl constructor(private val api: Api) : CharacterRepository {

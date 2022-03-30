@@ -1,7 +1,7 @@
-package com.example.data.repository.mappers
+package com.example.rickymorty.data.repository.mappers
 
-import com.example.data.network.models.CharacterListDto
-import com.example.domain.models.Character
+import com.example.rickymorty.data.network.models.CharacterListDto
+import com.example.rickymorty.domain.models.Character
 
 fun CharacterListDto.toCharacter(): Character {
     return Character(
