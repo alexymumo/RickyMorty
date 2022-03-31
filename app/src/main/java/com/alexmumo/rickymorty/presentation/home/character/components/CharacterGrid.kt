@@ -54,9 +54,9 @@ fun CharacterInfo(
     alignment: Alignment.Horizontal = Alignment.Start
 ) {
     val color = when (character.status) {
-        "Alive" -> Color.Cyan
-        "Dead" -> Color.Black
-        else -> Color.Green
+        "Alive" -> Color.Green
+        "Dead" -> Color.Red
+        else -> Color.Yellow
     }
     Column(
         modifier = modifier
