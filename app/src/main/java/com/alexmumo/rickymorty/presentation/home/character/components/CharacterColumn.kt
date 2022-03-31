@@ -25,12 +25,9 @@ fun CharacterColumn(
     items.apply {
         when {
             loadState.refresh is LoadState.Loading -> {
-
             }
             loadState.refresh is LoadState.Error -> {
-
             }
-
         }
     }
 }
