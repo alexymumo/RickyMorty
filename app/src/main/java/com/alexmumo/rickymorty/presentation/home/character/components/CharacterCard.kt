@@ -47,7 +47,7 @@ fun CharacterUI(character: Character, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun CharacterCard(characterImage: String, character: Character) {
+fun CharacterCard(characterImage: String) {
     CoilImage(
         imageRequest =
         ImageRequest

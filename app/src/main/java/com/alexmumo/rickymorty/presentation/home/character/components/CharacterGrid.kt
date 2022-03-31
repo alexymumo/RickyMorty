@@ -87,7 +87,7 @@ fun CharacterInfo(
                     .size(10.dp)
                     .background(color = color, shape = CircleShape)
             )
-            Text(text = character.status + " - " +character.species)
-    }
+            Text(text = character.status + " - " + character.species)
+        }
     }
 }
