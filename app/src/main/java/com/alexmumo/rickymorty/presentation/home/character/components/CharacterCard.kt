@@ -3,7 +3,7 @@ package com.alexmumo.rickymorty.presentation.home.character.components
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.* // ktlint-disable no-wildcard-imports
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Text
@@ -15,7 +15,7 @@ import coil.compose.rememberImagePainter
 import com.alexmumo.rickymorty.domain.models.Character
 
 @Composable
-fun CharacterUI(character: Character, modifier: Modifier = Modifier) {
+fun CharacterUI(character: java.lang.Character, modifier: Modifier = Modifier) {
     AnimatedVisibility(visible = true) {
         Card(
             modifier = modifier
