@@ -55,6 +55,7 @@ dependencies {
 
     // Koin
     implementation "io.insert-koin:koin-android:$koin_version"
+    implementation "io.insert-koin:koin-androidx-compose:$koin_version"
 
     // LiveData components
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
