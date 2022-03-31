@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "166741675592",
+    "project_id": "rickymorty-d46e1",
+    "storage_bucket": "rickymorty-d46e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166741675592:android:e54b240e9560fd23f1d27d",
+        "android_client_info": {
+          "package_name": "com.example.rickymorty"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "166741675592-qlmkeu4eog0q4ttpk4n1b99f0uh7fed2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5XbZH0k9tGcMLY1-l1fVAiGd8fb3Iw8U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "166741675592-qlmkeu4eog0q4ttpk4n1b99f0uh7fed2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
