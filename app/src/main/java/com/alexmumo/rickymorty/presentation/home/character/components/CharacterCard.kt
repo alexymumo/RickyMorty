@@ -2,7 +2,9 @@ package com.alexmumo.rickymorty.presentation.home.character.components
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateContentSize
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.* // ktlint-disable no-wildcard-imports
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.CircularProgressIndicator
@@ -13,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import coil.request.ImageRequest
 import com.alexmumo.rickymorty.domain.models.Character
 import com.skydoves.landscapist.coil.CoilImage
@@ -65,15 +68,8 @@ fun CharacterCard(characterImage: String, character: Character) {
             Text(text = "Failed to load image")
         }
     )
-    /*val imagePainter = rememberImagePainter(data = character.imageUrl)
-    Image(
-        painter = imagePainter,
-        contentDescription = null
-    )
-
-     */
 }
-
+/*
 @Composable
 fun CharacterInfo(character: Character) {
     Column {
@@ -88,5 +84,21 @@ fun CharacterInfo(character: Character) {
             fontWeight = FontWeight.Black,
             maxLines = 1
         )
+        Text(text = "Status", fontSize = 13.sp)
+
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            Box(
+                modifier = Modifier
+                    .size(10.dp)
+                    .background(color = color, shape = CircleShape)
+            ) {
+
+            }
+        }
     }
 }
+
+ */

@@ -2,8 +2,10 @@ package com.alexmumo.rickymorty.presentation.home.character.components
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.* // ktlint-disable no-wildcard-imports
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
@@ -14,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.paging.compose.LazyPagingItems
 import com.alexmumo.rickymorty.domain.models.Character
 
@@ -74,5 +77,17 @@ fun CharacterInfo(
             style = MaterialTheme.typography.caption,
             maxLines = 1
         )
+        Text(text = "Status", fontSize = 13.sp)
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            Box(
+                modifier = Modifier
+                    .size(10.dp)
+                    .background(color = color, shape = CircleShape)
+            )
+            Text(text = character.status + " - " +character.species)
+    }
     }
 }
