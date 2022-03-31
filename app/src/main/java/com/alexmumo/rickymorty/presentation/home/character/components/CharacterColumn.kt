@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.items
+import com.alexmumo.rickymorty.domain.models.Character
 
 @Composable
 fun CharacterColumn(

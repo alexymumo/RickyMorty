@@ -5,7 +5,6 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface Api {
-
     @GET("character")
     suspend fun fetchCharacters(
         @Query("page") page: Int,

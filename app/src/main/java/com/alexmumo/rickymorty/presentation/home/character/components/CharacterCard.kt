@@ -15,7 +15,7 @@ import coil.compose.rememberImagePainter
 import com.alexmumo.rickymorty.domain.models.Character
 
 @Composable
-fun CharacterUI(character: java.lang.Character, modifier: Modifier = Modifier) {
+fun CharacterUI(character: Character, modifier: Modifier = Modifier) {
     AnimatedVisibility(visible = true) {
         Card(
             modifier = modifier
@@ -24,7 +24,10 @@ fun CharacterUI(character: java.lang.Character, modifier: Modifier = Modifier) {
             shape = RoundedCornerShape(8.dp),
             elevation = 8.dp
         ) {
-
+            Row {
+                CharacterCard(character = character)
+                CharacterInfo(character = character, modifier = Modifier.fillMaxSize().padding(4.dp))
+            }
         }
     }
 }
@@ -39,7 +42,7 @@ fun CharacterCard(character: Character) {
 }
 
 @Composable
-fun ChaacterInfo(character: Character) {
+fun CharacterInfo(character: Character) {
     Column {
         Text(
             text = character.name,

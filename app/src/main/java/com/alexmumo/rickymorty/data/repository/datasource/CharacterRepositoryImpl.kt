@@ -2,8 +2,8 @@ package com.alexmumo.rickymorty.data.repository.datasource
 
 import android.net.Uri
 import androidx.paging.* // ktlint-disable no-wildcard-imports
-import com.alexmumo.rickymorty.data.repository.mappers.toCharacter
 import com.alexmumo.rickymorty.data.network.api.Api
+import com.alexmumo.rickymorty.data.repository.mappers.toCharacter
 import com.alexmumo.rickymorty.domain.models.Character
 import com.alexmumo.rickymorty.domain.repositories.CharacterRepository
 import kotlinx.coroutines.flow.Flow
