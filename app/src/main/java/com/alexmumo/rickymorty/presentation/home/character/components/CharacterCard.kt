@@ -15,7 +15,7 @@ import coil.compose.rememberImagePainter
 import com.alexmumo.rickymorty.domain.models.Character
 
 @Composable
-fun CharacterUI(character: Character, modifier: Modifier = Modifier) {
+fun CharacterUI(character: java.lang.Character, modifier: Modifier = Modifier) {
     AnimatedVisibility(visible = true) {
         Card(
             modifier = modifier
@@ -25,9 +25,7 @@ fun CharacterUI(character: Character, modifier: Modifier = Modifier) {
             elevation = 8.dp
         ) {
             Row() {
-                CharacterInfo(
-                    character = character
-                )
+                CharacterInfo(character = character)
             }
         }
     }
