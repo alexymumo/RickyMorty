@@ -15,7 +15,7 @@ import coil.compose.rememberImagePainter
 import com.alexmumo.rickymorty.domain.models.Character
 
 @Composable
-fun CharacterUI(character: java.lang.Character, modifier: Modifier = Modifier) {
+fun CharacterUI(character: Character, modifier: Modifier = Modifier) {
     AnimatedVisibility(visible = true) {
         Card(
             modifier = modifier
@@ -24,9 +24,7 @@ fun CharacterUI(character: java.lang.Character, modifier: Modifier = Modifier) {
             shape = RoundedCornerShape(8.dp),
             elevation = 8.dp
         ) {
-            Row() {
-                CharacterInfo(character = character)
-            }
+
         }
     }
 }
@@ -36,14 +34,12 @@ fun CharacterCard(character: Character) {
     val imagePainter = rememberImagePainter(data = character.imageUrl)
     Image(
         painter = imagePainter,
-        contentDescription = null,
+        contentDescription = null
     )
 }
 
 @Composable
-fun CharacterInfo(
-    character: Character
-) {
+fun ChaacterInfo(character: Character) {
     Column {
         Text(
             text = character.name,
