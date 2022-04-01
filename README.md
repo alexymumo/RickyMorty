@@ -1,31 +1,24 @@
 ## RickyMorty App
-- Is an android application that consumes RickyMorty Api to fetch list of movie characters. It is built using MVVM Architecture, Kotlin programming language
+- An android app that consumes RickyMorty API to display list of rickymorty characters, location and episodes. It is built using clean architecture principle, Repository pattern, MVVM Architecture in the presentation layer, Kotlin programming language
  and Jetpack Compose.
+
 - Minimum API Level: 21 [Supports Over 84% Devices](https://developer.android.com)
 - Build System: [Gradle](https://gradle.org/)
 
 ## Table of Contents
 - [Prerequisite](#prerequisite)
-<<<<<<< HEAD
 - [Architecture](#architecture)
-- [Libraries](#libraries)
+- [TechStack](#techstack)
 - [Screeenshots](#screenshots)
-- [HelpfulResources](#helpfulresources)
-<br>
-=======
-- [Libraries](#libraries)
-- [Screeenshots](#screenshots)
-- [HelpfulResources](#helpful resources)
->>>>>>> origin/main
-
+- [Demo](#demo)
 ## Prerequisite
 - Inorder to run the application you need to [clone]().
 - Android studio
 <br>
 ## Architecture
 
-
-## Libraries
+<br>
+## Tech Stack
 - [Jetpack Compose](https://developer.android.com/jetpack) - Declarative way of building user interfaces(UI).
 - [Viewmodel](https://developer.android.com/topic/libraries/architecture/viewmodel) - Manage UI related data in  a lifecycle conscious way .
 - [Data Binding](https://developer.android.com/topic/libraries/data-binding) - Support library that allows binding of UI components in  layouts to data sources.
