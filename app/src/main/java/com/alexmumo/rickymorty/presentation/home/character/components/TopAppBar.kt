@@ -70,7 +70,6 @@ fun TopBar() {
         },
         bottomBar = {
             BottomAppBar(
-
                 backgroundColor = MaterialTheme.colors.primary
             ) {
             }
