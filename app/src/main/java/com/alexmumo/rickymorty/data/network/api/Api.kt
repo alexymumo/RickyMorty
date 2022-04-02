@@ -3,6 +3,7 @@ package com.alexmumo.rickymorty.data.network.api
 import com.alexmumo.rickymorty.data.network.models.CharacterDto
 import com.alexmumo.rickymorty.data.network.models.details.CharacterDetailDto
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface Api {
@@ -12,8 +13,8 @@ interface Api {
         @Query("name") name: String? = null
     ): CharacterDto
 
-    @GET("character")
+    @GET("character/{character_id}")
     suspend fun fetchCharacterDetails(
-        @Query("id") id: Int
+        @Path("id") id: Int
     ): CharacterDetailDto
 }

@@ -4,23 +4,23 @@ import com.google.gson.annotations.SerializedName
 
 data class CharacterDetailDto(
     @SerializedName("created")
-    val created: String?,
+    val created: String,
     @SerializedName("episode")
-    val episode: List<Any>?,
+    val episode: List<Any>,
     @SerializedName("gender")
-    val gender: String?,
+    val gender: String,
     @SerializedName("id")
-    val id: Int?,
+    val id: Int,
     @SerializedName("image")
-    val image: String?,
+    val image: String,
     @SerializedName("name")
-    val name: String?,
+    val name: String,
     @SerializedName("species")
-    val species: String?,
+    val species: String,
     @SerializedName("status")
-    val status: String?,
+    val status: String,
     @SerializedName("type")
-    val type: String?,
+    val type: String,
     @SerializedName("url")
-    val url: String?
+    val url: String
 )
