@@ -15,8 +15,6 @@ data class CharacterDetails(
     val image: String?,
     @SerializedName("name")
     val name: String?,
-    @SerializedName("origin")
-    val origin: Origin?,
     @SerializedName("species")
     val species: String?,
     @SerializedName("status")
