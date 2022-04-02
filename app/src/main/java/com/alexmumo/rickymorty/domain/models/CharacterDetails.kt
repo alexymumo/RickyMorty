@@ -2,7 +2,7 @@ package com.alexmumo.rickymorty.domain.models
 
 import com.google.gson.annotations.SerializedName
 
-data class CharacteDetails(
+data class CharacterDetails(
     @SerializedName("created")
     val created: String?,
     @SerializedName("episode")
