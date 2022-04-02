@@ -1,4 +1,4 @@
-package com.alexmumo.rickymorty.presentation.home.viewmodel
+package com.alexmumo.rickymorty.presentation.screens.details
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 
 class HomeViewModel constructor(private val characterUseCase: GetCharacterUseCase) : ViewModel() {
 
-    private val _state : MutableState<CharacterState> = mutableStateOf(CharacterState())
+    private val _state: MutableState<CharacterState> = mutableStateOf(CharacterState())
 
     private val handler = CoroutineExceptionHandler { _, exception ->
         _state.value.isLoading = false
