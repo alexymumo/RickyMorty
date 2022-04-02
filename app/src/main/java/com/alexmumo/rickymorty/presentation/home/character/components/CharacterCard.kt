@@ -2,10 +2,7 @@ package com.alexmumo.rickymorty.presentation.home.character.components
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateContentSize
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.CircularProgressIndicator
@@ -35,6 +32,7 @@ fun CharacterUI(character: Character, modifier: Modifier = Modifier) {
                     character = character,
                     characterImage = character.imageUrl
                 )
+                Spacer(modifier = Modifier.size(8.dp))
                 CharacterInfo(
                     character = character,
                     modifier = Modifier
