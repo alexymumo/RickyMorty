@@ -14,7 +14,8 @@ fun BottomNavigationBar() {
     val items = listOf(
         NavigationItem.Home,
         NavigationItem.Episodes,
-        NavigationItem.Settings
+        NavigationItem.Settings,
+        NavigationItem.Location
     )
     BottomNavigation(
         backgroundColor = Color.Red,
@@ -23,12 +24,12 @@ fun BottomNavigationBar() {
         items.forEach { item ->
             BottomNavigationItem(
                 icon = {
-                       Icon(
-                           painterResource(id = item.icon),
-                           contentDescription = item.title
-                       )
+                    Icon(
+                        painterResource(id = item.icon),
+                        contentDescription = item.title
+                    )
                 },
-                label = { Text(text = item.title)},
+                label = { Text(text = item.title) },
                 selected = item.title == "Home",
                 onClick = {},
             )
