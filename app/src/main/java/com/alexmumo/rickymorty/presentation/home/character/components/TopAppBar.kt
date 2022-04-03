@@ -19,6 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+/*
 @Composable
 fun TopBar() {
     val scaffoldState = rememberScaffoldState(rememberDrawerState(DrawerValue.Closed))
@@ -134,3 +135,5 @@ fun BottomBar() {
 fun TopBarPreview() {
     TopBar()
 }
+
+ */

@@ -29,7 +29,10 @@ fun GridList(character: Character, modifier: Modifier = Modifier) {
                 characterImage = character.imageUrl,
                 modifier = Modifier.fillMaxWidth(0.7f)
             )
-            CharacterInfo(character = character, alignment = Alignment.CenterHorizontally)
+            CharacterInfo(
+                character = character,
+                alignment = Alignment.CenterHorizontally
+            )
         }
     }
 }
@@ -43,7 +46,10 @@ fun CharacterGrid(
     LazyVerticalGrid(cells = GridCells.Fixed(2), state = listState) {
         items(items.itemCount) { index ->
             items[index]?.let {
-                GridList(character = it, modifier = Modifier.animateContentSize())
+                GridList(
+                    character = it,
+                    modifier = Modifier.animateContentSize()
+                )
             }
         }
     }

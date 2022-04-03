@@ -5,7 +5,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.rememberLazyGridState
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.material.Text
+import androidx.compose.material.* // ktlint-disable no-wildcard-imports
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -22,14 +22,30 @@ fun CharacterList(viewModel: HomeViewModel = getViewModel()) {
 
     val characters = state.characterList?.collectAsLazyPagingItems()
 
-    if (state.errorMessage.isNotEmpty()) {
-        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-            Text(text = state.errorMessage)
-        }
-    }
+    Scaffold(
+        topBar = {
+            TopBar()
+           /* TopAppBar(
+                modifier = Modifier.height(80.dp),
+                title = { Text(text = "RickyMorty") },
+                backgroundColor = MaterialTheme.colors.primary,
+                contentColor = Color.White,
+                elevation = 10.dp
+            )
 
-    characters?.let { items ->
-        CharacterColumn(items = items, listState = lazyListState)
-        CharacterGrid(items = items, lazyGridState)
+            */
+        },
+        floatingActionButtonPosition = FabPosition.End
+    ) {
+        if (state.errorMessage.isNotEmpty()) {
+            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                Text(text = state.errorMessage)
+            }
+        }
+        characters?.let { items ->
+            // CharacterList(items = items, listState = lazyListState)
+            CharacterColumn(items = items, listState = lazyListState)
+            CharacterGrid(items = items, lazyGridState)
+        }
     }
 }
