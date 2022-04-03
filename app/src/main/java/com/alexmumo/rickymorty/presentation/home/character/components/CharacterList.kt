@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.alexmumo.rickymorty.presentation.screens.common.TopBar
 import com.alexmumo.rickymorty.presentation.screens.details.HomeViewModel
+import com.alexmumo.rickymorty.presentation.ui.navigation.BottomNavigationBar
 import org.koin.androidx.compose.getViewModel
 
 @ExperimentalFoundationApi
@@ -26,17 +27,10 @@ fun CharacterList(viewModel: HomeViewModel = getViewModel()) {
     Scaffold(
         topBar = {
             TopBar()
-           /* TopAppBar(
-                modifier = Modifier.height(80.dp),
-                title = { Text(text = "RickyMorty") },
-                backgroundColor = MaterialTheme.colors.primary,
-                contentColor = Color.White,
-                elevation = 10.dp
-            )
-
-            */
         },
-        floatingActionButtonPosition = FabPosition.End
+        bottomBar = {
+            BottomNavigationBar()
+        },
     ) {
         if (state.errorMessage.isNotEmpty()) {
             Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
