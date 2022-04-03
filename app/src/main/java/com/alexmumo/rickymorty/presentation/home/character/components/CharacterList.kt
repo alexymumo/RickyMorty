@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.paging.compose.collectAsLazyPagingItems
+import com.alexmumo.rickymorty.presentation.screens.common.TopBar
 import com.alexmumo.rickymorty.presentation.screens.details.HomeViewModel
 import org.koin.androidx.compose.getViewModel
 

@@ -7,3 +7,5 @@ sealed class NavigationItem(var route: String, var icon: Int, var title: String)
     object Episodes : NavigationItem("episodes", R.drawable.ic_launcher_background, "Episodes")
     object Settings : NavigationItem("settings", R.drawable.ic_launcher_background, "Settings")
 }
+
+
