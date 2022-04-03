@@ -1,5 +1,6 @@
 package com.alexmumo.rickymorty.presentation.home.character.components
 
+import android.view.animation.Transformation
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.layout.*
@@ -27,10 +28,10 @@ fun CharacterUI(character: Character, modifier: Modifier = Modifier) {
             shape = RoundedCornerShape(8.dp),
             elevation = 8.dp
         ) {
-            Row {
+            Row() {
                 CharacterCard(
-                    character = character,
-                    characterImage = character.imageUrl
+                    characterImage = character.imageUrl,
+                    modifier = Modifier.fillMaxWidth(0.35f)
                 )
                 Spacer(modifier = Modifier.size(8.dp))
                 CharacterInfo(
@@ -45,7 +46,11 @@ fun CharacterUI(character: Character, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun CharacterCard(characterImage: String, character: Character) {
+fun CharacterCard(
+    characterImage: String,
+    modifier: Modifier,
+    transformations: List<Transformation> = emptyList()
+) {
     CoilImage(
         imageRequest =
         ImageRequest

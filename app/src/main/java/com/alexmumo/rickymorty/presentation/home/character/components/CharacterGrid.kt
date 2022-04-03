@@ -18,6 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.paging.compose.LazyPagingItems
+import coil.transform.CircleCropTransformation
 import com.alexmumo.rickymorty.domain.models.Character
 
 @Composable
@@ -27,7 +28,11 @@ fun GridList(character: Character, modifier: Modifier = Modifier) {
         modifier = modifier.padding(8.dp)
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
-            CharacterInfo(character = character)
+            CharacterCard(
+                characterImage = character.imageUrl,
+                modifier = Modifier.fillMaxWidth(0.7f)
+            )
+            CharacterInfo(character = character, alignment = Alignment.CenterHorizontally)
         }
     }
 }
