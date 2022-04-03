@@ -19,11 +19,10 @@ class RickyMortyApplication : Application() {
     }
 
     private fun initKoin() {
-        val modules = listOf(networkModule, repositoryModule, presentationModule, domainModule)
         startKoin {
             androidLogger(level = Level.NONE)
             androidContext(this@RickyMortyApplication)
-            modules(modules)
+            modules(listOf(networkModule, repositoryModule, presentationModule, domainModule))
         }
     }
 
