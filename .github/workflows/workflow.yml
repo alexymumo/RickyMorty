@@ -1,4 +1,3 @@
-
 name: Build And Deploy App To Firebase Distribution
 
 on:
@@ -9,19 +8,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: set up JDK 1.8
+      - uses: actions/checkout@v1
+      - name: set up JDK
         uses: actions/setup-java@v1
         with:
-          java-version: 1.8
+          java-version: 11
       - name: Make gradlew executable
         run: chmod +x ./gradlew
       - name: build debug
-        run: ./gradlew assembleDevDebug
+        run: ./gradlew assembleDebug
       - name: Upload artifact to Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
           appId: ${{secrets.FIREBASE_APP_ID}}
           token: ${{secrets.FIREBASE_TOKEN}}
           groups: test-team
-          file: app/build/outputs/apk/app.apk
+          file: app/build/outputs/apk/debug/app-debug.apk
