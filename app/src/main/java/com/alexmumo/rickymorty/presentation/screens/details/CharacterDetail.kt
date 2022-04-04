@@ -23,7 +23,10 @@ import com.alexmumo.rickymorty.presentation.home.viewmodel.DetailsViewModel
 import org.koin.androidx.compose.getViewModel
 
 @Composable
-fun CharacterDetail(viewModel: DetailsViewModel = getViewModel()) {
+fun CharacterDetail(
+    navigate: () -> Unit,
+    viewModel: DetailsViewModel = getViewModel()
+) {
 
     val lazyListState = rememberLazyListState()
     val detailState = viewModel.state.value
@@ -108,5 +111,4 @@ fun CharacterDetail(viewModel: DetailsViewModel = getViewModel()) {
 @Preview
 @Composable
 fun CharacterDetailPreview() {
-    CharacterDetail()
 }
