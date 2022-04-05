@@ -2,7 +2,9 @@ package com.alexmumo.rickymorty.presentation.home.character.components
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateContentSize
-import androidx.compose.foundation.layout.*
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.foundation.layout.* // ktlint-disable no-wildcard-imports
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.CircularProgressIndicator
@@ -13,13 +15,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import coil.request.ImageRequest
+import coil.transform.Transformation
 import com.alexmumo.rickymorty.domain.models.Character
 import com.skydoves.landscapist.CircularReveal
 import com.skydoves.landscapist.coil.CoilImage
 
 @Composable
 fun CharacterUI(character: Character, modifier: Modifier = Modifier) {
-    AnimatedVisibility(visible = true) {
+    AnimatedVisibility(
+        visible = true,
+        enter = fadeIn(),
+        exit = fadeOut()
+    ) {
         Card(
             modifier = modifier
                 .animateContentSize()
@@ -29,8 +36,8 @@ fun CharacterUI(character: Character, modifier: Modifier = Modifier) {
         ) {
             Row {
                 CharacterCard(
-                    character = character,
-                    characterImage = character.imageUrl
+                    characterImage = character.imageUrl,
+                    modifier = Modifier.fillMaxWidth(0.35f)
                 )
                 Spacer(modifier = Modifier.size(8.dp))
                 CharacterInfo(
@@ -45,7 +52,11 @@ fun CharacterUI(character: Character, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun CharacterCard(characterImage: String, character: Character) {
+fun CharacterCard(
+    modifier: Modifier,
+    characterImage: String,
+    transformation: List<Transformation> = emptyList()
+) {
     CoilImage(
         imageRequest =
         ImageRequest

@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.alexmumo.rickymorty.presentation.home.character.components.CharacterList
+import com.alexmumo.rickymorty.presentation.screens.HomeScreen
 import com.alexmumo.rickymorty.presentation.ui.theme.RickyMortyTheme
 
 @ExperimentalFoundationApi
@@ -16,7 +16,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             RickyMortyTheme {
-                CharacterList()
+                HomeScreen()
+                // CharacterList()
             }
         }
     }
@@ -27,6 +28,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     RickyMortyTheme {
-        CharacterList()
+        HomeScreen()
+        // CharacterList()
     }
 }
