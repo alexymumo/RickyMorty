@@ -2,6 +2,7 @@ package com.alexmumo.rickymorty.presentation.home.character.components
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -20,10 +21,13 @@ import coil.transform.CircleCropTransformation
 import com.alexmumo.rickymorty.domain.models.Character
 
 @Composable
-fun GridList(character: Character, modifier: Modifier = Modifier) {
+fun GridList(character: Character, modifier: Modifier = Modifier, onClick: (Int) -> Unit) {
     Card(
         shape = RoundedCornerShape(8.dp),
         modifier = modifier.padding(8.dp)
+            .clickable {
+                onClick(character.id)
+            }
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             CharacterCard(
@@ -43,12 +47,15 @@ fun GridList(character: Character, modifier: Modifier = Modifier) {
 @Composable
 fun CharacterGrid(
     items: LazyPagingItems<Character>,
-    listState: LazyGridState = rememberLazyGridState()
+    listState: LazyGridState = rememberLazyGridState(),
+    navigate: (Int) -> Unit = {}
 ) {
     LazyVerticalGrid(cells = GridCells.Fixed(2), state = listState) {
         items(items.itemCount) { index ->
             items[index]?.let {
-                GridList(character = it, modifier = Modifier.animateContentSize())
+                GridList(character = it, modifier = Modifier.animateContentSize()) {
+                    navigate(it)
+                }
             }
         }
     }

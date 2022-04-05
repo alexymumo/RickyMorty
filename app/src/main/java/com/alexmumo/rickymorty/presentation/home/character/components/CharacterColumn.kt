@@ -28,8 +28,7 @@ fun CharacterColumn(
 
     ) {
         items(items) { character ->
-            CharacterUI(character = character!!, modifier = Modifier.animateContentSize())
-        }
+            CharacterUI(character = character!!, modifier = Modifier.animateContentSize()) }
         items.apply {
             when {
                 loadState.refresh is LoadState.Loading -> {
