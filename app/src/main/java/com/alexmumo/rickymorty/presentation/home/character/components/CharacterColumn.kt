@@ -1,7 +1,7 @@
 package com.alexmumo.rickymorty.presentation.home.character.components
 
 import androidx.compose.animation.animateContentSize
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.* // ktlint-disable no-wildcard-imports
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -83,7 +83,6 @@ fun CharacterColumn(
                     }
                 }
                 loadState.append is LoadState.Error -> {
-
                 }
             }
         }
