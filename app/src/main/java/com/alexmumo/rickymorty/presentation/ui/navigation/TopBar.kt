@@ -1,16 +1,19 @@
-package com.alexmumo.rickymorty.presentation.screens.common
+package com.alexmumo.rickymorty.presentation.ui.navigation
 
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun TopBar() {
     TopAppBar(
-        title = { Text(text = "RickyMorty") },
-        backgroundColor = Color.Green,
+        title = {
+            Text(text = "RickyMorty", fontSize = 18.sp)
+        },
+        backgroundColor = Color.Red,
         contentColor = Color.White
     )
 }
@@ -20,4 +23,3 @@ fun TopBar() {
 fun TopBarPreview() {
     TopBar()
 }
-
