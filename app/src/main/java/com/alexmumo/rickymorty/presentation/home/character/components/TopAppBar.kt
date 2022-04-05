@@ -79,7 +79,8 @@ fun TopBar() {
 
 @Composable
 fun BottomBarScaffold() {
-    Scaffold(bottomBar = { BottomBar() }
+    Scaffold(
+        bottomBar = { BottomBar() }
     ) {
         Box(
             modifier = Modifier

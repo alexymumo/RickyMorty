@@ -1,14 +1,12 @@
 package com.alexmumo.rickymorty.presentation.home.character.components
 
 import androidx.compose.animation.animateContentSize
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.* // ktlint-disable no-wildcard-imports
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -21,7 +19,8 @@ import com.alexmumo.rickymorty.domain.models.Character
 @Composable
 fun CharacterColumn(
     items: LazyPagingItems<Character>,
-    listState: LazyListState = rememberLazyListState()
+    listState: LazyListState = rememberLazyListState(),
+    navigate: (Int) -> Unit = {}
 ) {
     LazyColumn(
         state = listState,
@@ -29,8 +28,7 @@ fun CharacterColumn(
 
     ) {
         items(items) { character ->
-            CharacterUI(character = character!!, modifier = Modifier.animateContentSize())
-        }
+            CharacterUI(character = character!!, modifier = Modifier.animateContentSize()) }
         items.apply {
             when {
                 loadState.refresh is LoadState.Loading -> {
@@ -44,9 +42,46 @@ fun CharacterColumn(
                                 ),
                             contentAlignment = Alignment.Center
                         ) {
-                            CircularProgressIndicator(modifier = Modifier.height(30.dp))
+                            CircularProgressIndicator(
+                                modifier = Modifier.height(30.dp)
+                            )
                         }
                     }
+                }
+                loadState.append is LoadState.Loading -> {
+                    item {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(bottom = 50.dp),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            CircularProgressIndicator(
+                                modifier = Modifier.height(30.dp)
+                            )
+                        }
+                    }
+                }
+                loadState.refresh is LoadState.Error -> {
+                    val errorMessage = items.loadState.refresh as LoadState.Error
+                    item {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(bottom = 40.dp),
+                            contentAlignment = Alignment.BottomCenter
+                        ) {
+                            Column(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalAlignment = Alignment.CenterHorizontally
+                            ) {
+                                val err = errorMessage.error.localizedMessage!!
+                                Text(err)
+                            }
+                        }
+                    }
+                }
+                loadState.append is LoadState.Error -> {
                 }
             }
         }

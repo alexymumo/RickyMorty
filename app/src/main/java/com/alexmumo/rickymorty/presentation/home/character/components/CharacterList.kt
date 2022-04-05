@@ -29,7 +29,7 @@ fun CharacterList(viewModel: HomeViewModel = getViewModel()) {
     }
 
     characters?.let { items ->
-        CharacterColumn(items = items, listState = lazyListState)
+        // CharacterColumn(items = items, listState = lazyListState)
         CharacterGrid(items = items, lazyGridState)
     }
 }
