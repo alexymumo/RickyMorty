@@ -20,7 +20,9 @@ fun HomeScreen() {
             CharacterList()
         },
         bottomBar = { BottomNavigationBar() },
-    )
+    ){
+        Navigation(navController)
+    }
 }
 
 @Preview

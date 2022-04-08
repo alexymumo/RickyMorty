@@ -13,11 +13,12 @@ import androidx.compose.ui.tooling.preview.Preview
 fun BottomNavigationBar() {
     val items = listOf(
         NavigationItem.Home,
+        NavigationItem.Search,
         NavigationItem.Episodes,
         NavigationItem.Settings
     )
     BottomNavigation(
-        backgroundColor = Color.Red,
+        backgroundColor = Color.Black,
         contentColor = Color.White
     ) {
         items.forEach { item ->
@@ -26,7 +27,8 @@ fun BottomNavigationBar() {
                 label = { Text(text = item.title) },
                 selectedContentColor = Color.White,
                 alwaysShowLabel = true,
-                selected = false, onClick = {}
+                selected = false,
+                onClick = {}
             )
         }
     }
