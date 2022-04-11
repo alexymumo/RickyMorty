@@ -19,7 +19,6 @@ class MainActivity : ComponentActivity() {
         setContent {
             RickyMortyTheme {
                 MainScreen()
-                // CharacterList()
             }
         }
     }

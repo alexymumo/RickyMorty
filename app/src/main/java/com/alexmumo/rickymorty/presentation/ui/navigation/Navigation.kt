@@ -16,14 +16,17 @@ fun Navigation(navController: NavHostController) {
         composable(route = NavigationItem.Splash.route) {
             SplashScreen(navController = navController)
         }
-        composable(route = NavigationItem.Search.route) {
-            SearchScreen(navController = navController)
+        composable(route = NavigationItem.Home.route) {
+            HomeScreen(navController = navController)
         }
         composable(route = NavigationItem.Settings.route) {
             SettingScreen(navController = navController)
         }
         composable(route = NavigationItem.Episodes.route) {
             EpisodeScreen(navController = navController)
+        }
+        composable(route = NavigationItem.Search.route) {
+            SearchScreen(navController = navController)
         }
     }
 }
