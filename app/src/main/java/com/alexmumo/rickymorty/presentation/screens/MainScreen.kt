@@ -4,8 +4,10 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
-import com.alexmumo.rickymorty.presentation.home.character.components.BottomBar
+import androidx.navigation.compose.currentBackStackEntryAsState
+import com.alexmumo.rickymorty.presentation.ui.navigation.BottomNavigationBar
 import com.alexmumo.rickymorty.presentation.ui.navigation.Navigation
+import com.alexmumo.rickymorty.presentation.ui.navigation.NavigationItem
 import com.alexmumo.rickymorty.presentation.ui.navigation.TopBar
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 
@@ -15,9 +17,23 @@ import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 fun MainScreen() {
     val navController = rememberAnimatedNavController()
 
+    val topDestinations = listOf(
+        NavigationItem.Home,
+        NavigationItem.Episodes,
+        NavigationItem.Search
+    )
+    val isTopDestination = navController.currentBackStackEntryAsState().value?.destination?.route in topDestinations.map { it.route }
+
+    val backStackEntryState = navController.currentBackStackEntryAsState()
     Scaffold(
         topBar = { TopBar() },
-        bottomBar = { BottomBar() }
+        bottomBar = {
+            BottomNavigationBar(
+                navController = navController,
+                backStackEntryState = backStackEntryState,
+                bottomNavItems = topDestinations
+            )
+        }
     ) {
         Navigation(navController = navController)
     }
