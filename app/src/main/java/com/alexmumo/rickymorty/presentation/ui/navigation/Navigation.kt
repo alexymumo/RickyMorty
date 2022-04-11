@@ -12,8 +12,8 @@ import com.alexmumo.rickymorty.presentation.screens.*
 @ExperimentalFoundationApi
 @Composable
 fun Navigation(navController: NavHostController) {
-    NavHost(navController, startDestination = NavigationItem.Splash.route) {
-        composable(route = NavigationItem.Home.route) {
+    NavHost(navController = navController, startDestination = NavigationItem.Splash.route) {
+        composable(route = NavigationItem.Splash.route) {
             SplashScreen(navController = navController)
         }
         composable(route = NavigationItem.Search.route) {
