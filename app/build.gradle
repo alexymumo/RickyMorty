@@ -97,6 +97,9 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
 
+    // Coil
+    implementation "io.coil-kt:coil-compose:$coil_version"
+
     //Timber
     implementation 'com.jakewharton.timber:timber:5.0.1'
 

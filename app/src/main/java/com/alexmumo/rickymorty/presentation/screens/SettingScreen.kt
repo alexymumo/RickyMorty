@@ -54,5 +54,4 @@ fun SettingScreen(navController: NavController) {
 )
 @Composable
 fun SettingScreenPreview() {
-    SettingScreen()
 }

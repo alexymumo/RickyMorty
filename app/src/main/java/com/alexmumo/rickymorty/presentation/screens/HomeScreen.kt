@@ -8,13 +8,6 @@ import androidx.compose.ui.tooling.preview.Preview
 @Composable
 fun HomeScreen() {
 
-   /* val navController = rememberNavController()
-    Scaffold(
-        topBar = { TopBar() },
-        bottomBar = { BottomNavigationBar(navController) },
-    ) {
-        Navigation(navController)
-    }*/
 }
 
 @Preview
