@@ -60,7 +60,7 @@ fun SplashScreen(
             text = "RickyMorty",
             fontWeight = FontWeight.Bold,
             fontStyle = FontStyle.Italic,
-            fontSize = 80.sp,
+            fontSize = 100.sp,
         )
     }
 }
