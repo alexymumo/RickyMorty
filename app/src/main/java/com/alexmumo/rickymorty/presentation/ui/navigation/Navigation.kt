@@ -5,27 +5,25 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.alexmumo.rickymorty.presentation.screens.EpisodeScreen
-import com.alexmumo.rickymorty.presentation.screens.HomeScreen
-import com.alexmumo.rickymorty.presentation.screens.SearchScreen
-import com.alexmumo.rickymorty.presentation.screens.SettingScreen
+import com.alexmumo.rickymorty.presentation.screens.*
+
+// ktlint-disable no-wildcard-imports
 
 @ExperimentalFoundationApi
 @Composable
-fun Navigation(navHostController: NavHostController) {
-
-    NavHost(navHostController, startDestination = NavigationItem.Home.route) {
-        composable(NavigationItem.Home.route) {
-            HomeScreen()
+fun Navigation(navController: NavHostController) {
+    NavHost(navController, startDestination = NavigationItem.Splash.route) {
+        composable(route = NavigationItem.Home.route) {
+            SplashScreen(navController = navController)
         }
-        composable(NavigationItem.Search.route) {
-            SearchScreen()
+        composable(route = NavigationItem.Search.route) {
+            SearchScreen(navController = navController)
         }
-        composable(NavigationItem.Settings.route) {
-            SettingScreen()
+        composable(route = NavigationItem.Settings.route) {
+            SettingScreen(navController = navController)
         }
-        composable(NavigationItem.Episodes.route) {
-            EpisodeScreen()
+        composable(route = NavigationItem.Episodes.route) {
+            EpisodeScreen(navController = navController)
         }
     }
 }
