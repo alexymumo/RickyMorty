@@ -29,7 +29,10 @@ import com.skydoves.landscapist.CircularReveal
 import com.skydoves.landscapist.coil.CoilImage
 
 @Composable
-fun CharacterUI(character: Character, modifier: Modifier = Modifier) {
+fun CharacterUI(
+    character: Character,
+    modifier: Modifier = Modifier
+) {
     AnimatedVisibility(
         visible = true,
         enter = fadeIn(),

@@ -9,6 +9,8 @@ import com.alexmumo.rickymorty.presentation.screens.*
 
 // ktlint-disable no-wildcard-imports
 
+// ktlint-disable no-wildcard-imports
+
 @ExperimentalFoundationApi
 @Composable
 fun Navigation(navController: NavHostController) {
