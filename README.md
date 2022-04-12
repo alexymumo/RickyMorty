@@ -45,8 +45,8 @@ and default parameters.
 <br>
 
 ## Screenshots
-<img src="resources/light.png">
-<img src="resources/dark.png">
+<img src="resources/light.png" width="300%">
+<img src="resources/dark.png" width="300%">
 <br>
 
 
