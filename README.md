@@ -19,7 +19,6 @@
 
 <br>
 ## Tech Stack
-
 - [Koin](https://insert-koin.io/) - Dependency Injection library.
 - [Jetpack Components](https://developer.android.com/jetpack)
     - [Jetpack Compose](https://developer.android.com/jetpack/compose)- Modern toolkit for building native UI.
