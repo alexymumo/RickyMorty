@@ -11,13 +11,15 @@
 - [TechStack](#techstack)
 - [Screeenshots](#screenshots)
 - [Demo](#demo)
+
 ## Prerequisite
-- Inorder to run the application you need to [clone]().
+- Inorder to run the application you need to [clone](https://github.com/alexymumo/RickyMorty.git).
 - Android studio
 <br>
-## Architecture
 
-<br>
+## Architecture
+<img src="resources/architecture.png">
+
 ## Tech Stack
 - [Koin](https://insert-koin.io/) - Dependency Injection library.
 - [Jetpack Components](https://developer.android.com/jetpack)
@@ -39,10 +41,13 @@ and default parameters.
 - [Flow](https://developer.android.com/kotlin/flow) - Flows are built on top of coroutines and can provide multiple values. A flow is conceptually a stream of data that can be computed asynchronously.
 - [Timber](https://github.com/JakeWharton/timber)-Library for easier logging.
 - [Coil](https://coil-kt.github.io/coil/compose/)- Image Library from loading images from the database and caching in memory.
-- [Palette API](https://developer.android.com/reference/androidx/palette/graphics/Palette) - Helper class to extract prominent colors from an image.
 - [kotlinx.coroutines](https://github.com/Kotlin/kotlinx.coroutines) - Library Support for coroutines,provides runBlocking coroutine builder used in tests.
 <br>
+
 ## Screenshots
-<img src="/resources/architecture.png" width="300%">
+<img src="resources/light.png" width="300%">
+<img src="resources/dark.png" width="300%">
+<br>
+
 
 ## Helpful Resources
