@@ -2,8 +2,7 @@ package com.alexmumo.rickymorty.data.repository.mappers
 
 import com.alexmumo.rickymorty.data.network.models.episodes.EpisodeDto
 
-
-fun EpisodeDto.toEpisode() : EpisodeDto {
+fun EpisodeDto.toEpisode(): EpisodeDto {
     return EpisodeDto(
         airDate = airDate,
         characters = characters,

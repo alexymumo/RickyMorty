@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/data/cache" />
             <option value="$PROJECT_DIR$/data/network" />
             <option value="$PROJECT_DIR$/data/repository" />
+            <option value="$PROJECT_DIR$/domain" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
