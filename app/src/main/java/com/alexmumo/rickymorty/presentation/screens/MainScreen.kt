@@ -22,7 +22,7 @@ fun MainScreen() {
         NavigationItem.Episodes,
         NavigationItem.Search
     )
-    val isTopDestination = navController.currentBackStackEntryAsState().value?.destination?.route in topDestinations.map { it.route }
+    // val isTopDestination = navController.currentBackStackEntryAsState().value?.destination?.route in topDestinations.map { it.route }
 
     val backStackEntryState = navController.currentBackStackEntryAsState()
     Scaffold(
@@ -38,3 +38,6 @@ fun MainScreen() {
         Navigation(navController = navController)
     }
 }
+
+@Composable
+

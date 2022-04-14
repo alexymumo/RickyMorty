@@ -23,7 +23,6 @@ fun HomeScreen(
     viewModel: HomeViewModel = getViewModel()
 ) {
     val state = viewModel.characterState.value
-    val lazyListState = rememberLazyListState()
     val lazyGridState = rememberLazyGridState()
     val characters = state.characterList?.collectAsLazyPagingItems()
     if (state.errorMessage.isNotEmpty()) {
