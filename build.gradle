@@ -14,6 +14,7 @@ buildscript {
         accompanist = "0.24.1-alpha"
         coil_version = "1.4.0"
         koin_version= "3.1.5"
+        timber_version = "5.0.1"
     }
     repositories {
         google()
