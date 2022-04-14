@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.alexmumo.rickymorty.presentation.home.viewmodel.DetailsViewModel
 import org.koin.androidx.compose.getViewModel
+import timber.log.Timber
 
 @Composable
 fun DetailScreen(
@@ -70,6 +71,7 @@ fun DetailScreen(
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.fillMaxWidth()
                     )
+                    Timber.e("Movie Details $id")
                 }
             }
         }

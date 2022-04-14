@@ -37,10 +37,10 @@ fun TopBar() {
             }
         },
         actions = {
-            IconButton(onClick = { NavigationItem.Search.route }) {
+            IconButton(onClick = {  }) {
                 Icon(Icons.Filled.Favorite, contentDescription = null)
             }
-            IconButton(onClick = { /*TODO*/ }) {
+            IconButton(onClick = { NavigationItem.Search.route }) {
                 Icon(Icons.Filled.Search, contentDescription = null)
             }
         }
