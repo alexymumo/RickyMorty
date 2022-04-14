@@ -4,6 +4,7 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.alexmumo.rickymorty.presentation.ui.navigation.BottomNavigationBar
 import com.alexmumo.rickymorty.presentation.ui.navigation.Navigation
@@ -39,5 +40,10 @@ fun MainScreen() {
     }
 }
 
+@ExperimentalFoundationApi
+@ExperimentalAnimationApi
+@Preview
 @Composable
-
+fun MainScreenPreview() {
+    MainScreen()
+}

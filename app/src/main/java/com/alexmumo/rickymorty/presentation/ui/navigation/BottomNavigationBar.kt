@@ -68,3 +68,8 @@ fun BottomNavigationBar(
         }
     }
 }
+
+@Preview
+@Composable
+fun BottomNavigationBarPreview() {
+}
