@@ -9,3 +9,6 @@ dependencyResolutionManagement {
 rootProject.name = "RickyMorty"
 include ':app'
 include ':data'
+include ':data:cache'
+include ':data:network'
+include ':data:repository'
