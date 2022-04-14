@@ -45,6 +45,10 @@ dependencies {
     // Retrofit Gson
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
 
-    //Paging
+    // Paging
     implementation 'androidx.paging:paging-compose:1.0.0-alpha14'
+
+    // Coroutine
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
 }
