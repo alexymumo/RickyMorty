@@ -40,7 +40,7 @@ fun TopBar() {
             IconButton(onClick = {  }) {
                 Icon(Icons.Filled.Favorite, contentDescription = null)
             }
-            IconButton(onClick = { NavigationItem.Search.route }) {
+            IconButton(onClick = { }) {
                 Icon(Icons.Filled.Search, contentDescription = null)
             }
         }
