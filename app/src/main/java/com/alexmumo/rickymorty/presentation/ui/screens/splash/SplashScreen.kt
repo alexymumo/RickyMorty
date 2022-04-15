@@ -1,4 +1,4 @@
-package com.alexmumo.rickymorty.presentation.screens
+package com.alexmumo.rickymorty.presentation.ui.screens.splash
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

@@ -1,4 +1,4 @@
-package com.alexmumo.rickymorty.presentation.screens.details
+package com.alexmumo.rickymorty.presentation.ui.screens.details
 
 import com.alexmumo.rickymorty.domain.models.CharacterDetails
 

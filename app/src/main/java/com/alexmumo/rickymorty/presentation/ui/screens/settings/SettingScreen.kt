@@ -1,4 +1,4 @@
-package com.alexmumo.rickymorty.presentation.screens
+package com.alexmumo.rickymorty.presentation.ui.screens.settings
 
 import android.content.res.Configuration
 import androidx.compose.foundation.Image

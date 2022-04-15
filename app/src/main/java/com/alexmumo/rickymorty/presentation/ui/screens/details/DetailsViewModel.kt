@@ -1,11 +1,10 @@
-package com.alexmumo.rickymorty.presentation.home.viewmodel
+package com.alexmumo.rickymorty.presentation.ui.screens.details
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.alexmumo.rickymorty.domain.usescases.GetCharacterDetailUseCase
-import com.alexmumo.rickymorty.presentation.screens.details.DetailState
 import kotlinx.coroutines.launch
 
 class DetailsViewModel constructor(

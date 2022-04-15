@@ -1,6 +1,6 @@
-package com.alexmumo.rickymorty.presentation.screens.details
+package com.alexmumo.rickymorty.presentation.screens
 
-import androidx.compose.foundation.layout.* // ktlint-disable no-wildcard-imports
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Card
@@ -13,18 +13,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.alexmumo.rickymorty.presentation.home.viewmodel.DetailsViewModel
+import androidx.navigation.NavController
+import com.alexmumo.rickymorty.presentation.ui.screens.details.DetailsViewModel
 import org.koin.androidx.compose.getViewModel
+import timber.log.Timber
 
 @Composable
-fun CharacterDetail(
-    viewModel: DetailsViewModel = getViewModel(),
-
+fun DetailScreen(
+    navController: NavController,
+    detailsViewModel: DetailsViewModel = getViewModel(),
+    id: Int,
 ) {
-
     val lazyListState = rememberLazyListState()
-    val detailState = viewModel.state.value
-
+    val detailState = detailsViewModel.state.value
     if (detailState.isLoading) {
         Box(
             modifier = Modifier
@@ -70,6 +71,7 @@ fun CharacterDetail(
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.fillMaxWidth()
                     )
+                    Timber.e("Movie Details $id")
                 }
             }
         }
