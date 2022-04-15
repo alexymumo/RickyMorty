@@ -7,7 +7,7 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.alexmumo.rickymorty.presentation.screens.MainScreen
+import com.alexmumo.rickymorty.presentation.ui.screens.main.MainScreen
 import com.alexmumo.rickymorty.presentation.ui.theme.RickyMortyTheme
 
 @ExperimentalAnimationApi

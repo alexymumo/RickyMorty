@@ -7,7 +7,9 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.alexmumo.rickymorty.presentation.screens.*
+import com.alexmumo.rickymorty.presentation.ui.screens.details.DetailScreen
+import com.alexmumo.rickymorty.presentation.ui.screens.home.HomeScreen
+import com.alexmumo.rickymorty.presentation.ui.screens.search.SearchScreen
 import com.alexmumo.rickymorty.presentation.ui.screens.settings.SettingScreen
 import com.alexmumo.rickymorty.presentation.ui.screens.splash.SplashScreen
 
@@ -23,9 +25,6 @@ fun Navigation(navController: NavHostController) {
         }
         composable(route = NavigationItem.Settings.route) {
             SettingScreen(navController = navController)
-        }
-        composable(route = NavigationItem.Episodes.route) {
-            EpisodeScreen(navController = navController)
         }
         composable(route = NavigationItem.Search.route) {
             SearchScreen(navController = navController)

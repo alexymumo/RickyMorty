@@ -1,4 +1,4 @@
-package com.alexmumo.rickymorty.presentation.screens
+package com.alexmumo.rickymorty.presentation.ui.screens.main
 
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -20,7 +20,7 @@ fun MainScreen() {
 
     val topDestinations = listOf(
         NavigationItem.Home,
-        NavigationItem.Episodes,
+        NavigationItem.Settings,
         NavigationItem.Search
     )
     // val isTopDestination = navController.currentBackStackEntryAsState().value?.destination?.route in topDestinations.map { it.route }

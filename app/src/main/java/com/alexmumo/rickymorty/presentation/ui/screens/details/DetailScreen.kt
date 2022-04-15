@@ -1,6 +1,6 @@
-package com.alexmumo.rickymorty.presentation.screens
+package com.alexmumo.rickymorty.presentation.ui.screens.details
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.* // ktlint-disable no-wildcard-imports
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Card
@@ -14,7 +14,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.alexmumo.rickymorty.presentation.ui.screens.details.DetailsViewModel
 import org.koin.androidx.compose.getViewModel
 import timber.log.Timber
 

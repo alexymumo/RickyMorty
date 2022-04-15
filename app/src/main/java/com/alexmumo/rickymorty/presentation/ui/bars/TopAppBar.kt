@@ -1,4 +1,4 @@
-package com.alexmumo.rickymorty.presentation.home.character.components
+package com.alexmumo.rickymorty.presentation.ui.bars
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*

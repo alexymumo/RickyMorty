@@ -1,4 +1,4 @@
-package com.alexmumo.rickymorty.presentation.home.character
+package com.alexmumo.rickymorty.presentation.ui.components
 
 import androidx.paging.PagingData
 import com.alexmumo.rickymorty.domain.models.Character

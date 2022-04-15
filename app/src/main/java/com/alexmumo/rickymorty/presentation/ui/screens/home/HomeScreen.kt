@@ -1,4 +1,4 @@
-package com.alexmumo.rickymorty.presentation.screens
+package com.alexmumo.rickymorty.presentation.ui.screens.home
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Box
@@ -11,8 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.paging.compose.collectAsLazyPagingItems
-import com.alexmumo.rickymorty.presentation.home.character.components.CharacterGrid
-import com.alexmumo.rickymorty.presentation.screens.details.HomeViewModel
+import com.alexmumo.rickymorty.presentation.ui.components.CharacterGrid
 import org.koin.androidx.compose.getViewModel
 
 @ExperimentalFoundationApi

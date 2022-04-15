@@ -1,4 +1,4 @@
-package com.alexmumo.rickymorty.presentation.screens.details
+package com.alexmumo.rickymorty.presentation.ui.screens.details
 
 import androidx.compose.foundation.layout.* // ktlint-disable no-wildcard-imports
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -13,13 +13,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.alexmumo.rickymorty.presentation.ui.screens.details.DetailsViewModel
 import org.koin.androidx.compose.getViewModel
 
 @Composable
 fun CharacterDetail(
-    viewModel: DetailsViewModel = getViewModel(),
-
+    viewModel: DetailsViewModel = getViewModel()
     ) {
 
     val lazyListState = rememberLazyListState()
