@@ -1,4 +1,4 @@
-package com.alexmumo.rickymorty.presentation.home.character.components
+package com.alexmumo.rickymorty.presentation.ui.components
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.ExperimentalFoundationApi

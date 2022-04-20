@@ -1,4 +1,4 @@
-package com.alexmumo.rickymorty.presentation.screens.details
+package com.alexmumo.rickymorty.presentation.ui.screens.home
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
 import com.alexmumo.rickymorty.domain.usescases.GetCharacterUseCase
-import com.alexmumo.rickymorty.presentation.home.character.CharacterState
+import com.alexmumo.rickymorty.presentation.ui.components.CharacterState
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 

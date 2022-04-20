@@ -1,9 +1,11 @@
 package com.alexmumo.rickymorty.presentation.ui.navigation
 
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontStyle
@@ -29,6 +31,19 @@ fun TopBar() {
                 style = MaterialTheme.typography.h6,
             )
         },
+        navigationIcon = {
+            IconButton(onClick = { }) {
+                Icon(Icons.Filled.Menu, contentDescription = null)
+            }
+        },
+        actions = {
+            IconButton(onClick = {  }) {
+                Icon(Icons.Filled.Favorite, contentDescription = null)
+            }
+            IconButton(onClick = { }) {
+                Icon(Icons.Filled.Search, contentDescription = null)
+            }
+        }
     )
 }
 

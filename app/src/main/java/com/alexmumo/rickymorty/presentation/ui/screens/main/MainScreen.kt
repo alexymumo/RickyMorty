@@ -1,9 +1,10 @@
-package com.alexmumo.rickymorty.presentation.screens
+package com.alexmumo.rickymorty.presentation.ui.screens.main
 
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.alexmumo.rickymorty.presentation.ui.navigation.BottomNavigationBar
 import com.alexmumo.rickymorty.presentation.ui.navigation.Navigation
@@ -19,10 +20,10 @@ fun MainScreen() {
 
     val topDestinations = listOf(
         NavigationItem.Home,
-        NavigationItem.Episodes,
+        NavigationItem.Settings,
         NavigationItem.Search
     )
-    val isTopDestination = navController.currentBackStackEntryAsState().value?.destination?.route in topDestinations.map { it.route }
+    // val isTopDestination = navController.currentBackStackEntryAsState().value?.destination?.route in topDestinations.map { it.route }
 
     val backStackEntryState = navController.currentBackStackEntryAsState()
     Scaffold(
@@ -37,4 +38,12 @@ fun MainScreen() {
     ) {
         Navigation(navController = navController)
     }
+}
+
+@ExperimentalFoundationApi
+@ExperimentalAnimationApi
+@Preview
+@Composable
+fun MainScreenPreview() {
+    MainScreen()
 }

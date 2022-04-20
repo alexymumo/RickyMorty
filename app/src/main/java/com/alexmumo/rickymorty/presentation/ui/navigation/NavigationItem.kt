@@ -10,8 +10,8 @@ sealed class NavigationItem(
     @StringRes val title: Int?
 ) {
     object Home : NavigationItem("home", R.drawable.ic_home, R.string.home)
+    object Details : NavigationItem("details/{id}", R.drawable.ic_home, R.string.details)
     object Search : NavigationItem("search", R.drawable.ic_search, R.string.search)
-    object Episodes : NavigationItem("episodes", R.drawable.ic_episode, R.string.app_name)
     object Settings : NavigationItem("settings", R.drawable.ic_settings, R.string.settings)
     object Splash : NavigationItem("splash", R.drawable.ic_launcher_background, null)
 }

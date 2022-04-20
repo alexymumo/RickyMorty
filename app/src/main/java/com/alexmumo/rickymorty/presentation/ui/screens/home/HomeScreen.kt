@@ -1,10 +1,9 @@
-package com.alexmumo.rickymorty.presentation.screens
+package com.alexmumo.rickymorty.presentation.ui.screens.home
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.rememberLazyGridState
-import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -12,8 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.paging.compose.collectAsLazyPagingItems
-import com.alexmumo.rickymorty.presentation.home.character.components.CharacterGrid
-import com.alexmumo.rickymorty.presentation.screens.details.HomeViewModel
+import com.alexmumo.rickymorty.presentation.ui.components.CharacterGrid
 import org.koin.androidx.compose.getViewModel
 
 @ExperimentalFoundationApi
@@ -23,7 +21,6 @@ fun HomeScreen(
     viewModel: HomeViewModel = getViewModel()
 ) {
     val state = viewModel.characterState.value
-    val lazyListState = rememberLazyListState()
     val lazyGridState = rememberLazyGridState()
     val characters = state.characterList?.collectAsLazyPagingItems()
     if (state.errorMessage.isNotEmpty()) {
