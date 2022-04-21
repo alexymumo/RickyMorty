@@ -47,5 +47,5 @@ and default parameters.
 ## Screenshots
 <br>
 
-
+/home/kali/AndroidStudioProjects/RickyMorty/resources/Demo.mp4
 ## Helpful Resources
