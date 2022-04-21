@@ -22,16 +22,18 @@ fun MainScreen() {
         NavigationItem.Settings,
         NavigationItem.Search
     )
-    // val isTopDestination = navController.currentBackStackEntryAsState().value?.destination?.route in topDestinations.map { it.route }
+    val isTopDestination = navController.currentBackStackEntryAsState().value?.destination?.route in topDestinations.map { it.route }
 
     val backStackEntryState = navController.currentBackStackEntryAsState()
     Scaffold(
         bottomBar = {
-            BottomNavigationBar(
-                navController = navController,
-                backStackEntryState = backStackEntryState,
-                bottomNavItems = topDestinations
-            )
+            if (isTopDestination) {
+                BottomNavigationBar(
+                    navController = navController,
+                    backStackEntryState = backStackEntryState,
+                    bottomNavItems = topDestinations
+                )
+            }
         }
     ) {
         Navigation(navController = navController)
