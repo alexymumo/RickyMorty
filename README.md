@@ -45,5 +45,7 @@ and default parameters.
 <br>
 
 ## Screenshots
+<img src="resources/splash.png" width="300"> <img src="resources/characters.png" width="300">
+<img src="resources/dark.png" width="300">
 
 ## Demo
