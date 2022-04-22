@@ -9,7 +9,6 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import com.alexmumo.rickymorty.presentation.ui.navigation.BottomNavigationBar
 import com.alexmumo.rickymorty.presentation.ui.navigation.Navigation
 import com.alexmumo.rickymorty.presentation.ui.navigation.NavigationItem
-import com.alexmumo.rickymorty.presentation.ui.navigation.TopBar
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 
 @ExperimentalFoundationApi
@@ -23,17 +22,18 @@ fun MainScreen() {
         NavigationItem.Settings,
         NavigationItem.Search
     )
-    // val isTopDestination = navController.currentBackStackEntryAsState().value?.destination?.route in topDestinations.map { it.route }
+    val isTopDestination = navController.currentBackStackEntryAsState().value?.destination?.route in topDestinations.map { it.route }
 
     val backStackEntryState = navController.currentBackStackEntryAsState()
     Scaffold(
-        topBar = { TopBar() },
         bottomBar = {
-            BottomNavigationBar(
-                navController = navController,
-                backStackEntryState = backStackEntryState,
-                bottomNavItems = topDestinations
-            )
+            if (isTopDestination) {
+                BottomNavigationBar(
+                    navController = navController,
+                    backStackEntryState = backStackEntryState,
+                    bottomNavItems = topDestinations
+                )
+            }
         }
     ) {
         Navigation(navController = navController)
