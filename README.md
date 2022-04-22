@@ -44,6 +44,10 @@ and default parameters.
 - [kotlinx.coroutines](https://github.com/Kotlin/kotlinx.coroutines) - Library Support for coroutines,provides runBlocking coroutine builder used in tests.
 <br>
 
+https://user-images.githubusercontent.com/56880898/164644979-5532265b-4e48-469c-9742-5a4cf2072080.mp4
+
+
+
 ## Screenshots
 
 <img src="resources/splash.png" width="300"> <img src="resources/characters.png" width="300">
