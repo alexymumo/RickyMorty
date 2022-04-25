@@ -21,12 +21,16 @@ import coil.transform.CircleCropTransformation
 import com.alexmumo.rickymorty.domain.models.Character
 
 @Composable
-fun GridList(character: Character, modifier: Modifier = Modifier, onClick: (Int) -> Unit) {
+fun GridList(
+    character: Character,
+    modifier: Modifier = Modifier,
+    onClick: (Character) -> Unit
+) {
     Card(
         shape = RoundedCornerShape(8.dp),
         modifier = modifier.padding(8.dp)
             .clickable {
-                onClick(character.id)
+                onClick(character)
             }
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
@@ -48,7 +52,7 @@ fun GridList(character: Character, modifier: Modifier = Modifier, onClick: (Int)
 fun CharacterGrid(
     items: LazyPagingItems<Character>,
     listState: LazyGridState = rememberLazyGridState(),
-    navigate: (Int) -> Unit = {}
+    navigate: (Character) -> Unit = {}
 ) {
     LazyVerticalGrid(cells = GridCells.Fixed(2), state = listState) {
         items(items.itemCount) { index ->

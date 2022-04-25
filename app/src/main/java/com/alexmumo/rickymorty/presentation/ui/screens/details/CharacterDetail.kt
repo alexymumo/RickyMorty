@@ -18,7 +18,7 @@ import org.koin.androidx.compose.getViewModel
 @Composable
 fun CharacterDetail(
     viewModel: DetailsViewModel = getViewModel()
-    ) {
+) {
 
     val lazyListState = rememberLazyListState()
     val detailState = viewModel.state.value

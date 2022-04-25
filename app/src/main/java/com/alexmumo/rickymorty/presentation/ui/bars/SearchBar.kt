@@ -19,7 +19,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
-@OptIn(ExperimentalComposeUiApi::class)
+@ExperimentalComposeUiApi
 @Composable
 fun SearchBar(
     value: String,
@@ -29,9 +29,6 @@ fun SearchBar(
     var showClearButton by remember { mutableStateOf(false) }
     val keyboardController = LocalSoftwareKeyboardController.current
     val focusRequest = remember { FocusRequester() } // remember the state of the focusRequester being used in the modifier
-    LaunchedEffect(Unit) {
-        focusRequest.requestFocus()
-    }
 
     Column {
         Row(

@@ -43,9 +43,23 @@ and default parameters.
 - [Coil](https://coil-kt.github.io/coil/compose/) - Image Library from loading images from the database and caching in memory.
 - [kotlinx.coroutines](https://github.com/Kotlin/kotlinx.coroutines) - Library Support for coroutines,provides runBlocking coroutine builder used in tests.
 <br>
-
+  
 ## Screenshots
-<img src="resources/splash.png" width="300"> <img src="resources/characters.png" width="300">
-<img src="resources/dark.png" width="300">
+<table>
+<thead>
+<tr>
+<th align="center">Splash Screen</th>
+<th align="center">Character Grid</th>
+<th align="center">Dark Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="resources/splash.png" width="300"></td>
+<td><img src="resources/characters.png" width="300"></td>
+<td><img src="resources/dark.png" width="300"></td>
+</tr>
+</tbody>
+</table>
 
-## Demo
+<br>

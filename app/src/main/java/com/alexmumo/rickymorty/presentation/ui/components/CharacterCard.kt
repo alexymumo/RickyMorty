@@ -66,6 +66,8 @@ fun CharacterUI(
 fun CharacterCard(
     modifier: Modifier,
     characterImage: String,
+    // character: Character,
+    // onClickItem: (Character) -> Unit,
     transformation: List<Transformation> = emptyList()
 ) {
     CoilImage(
