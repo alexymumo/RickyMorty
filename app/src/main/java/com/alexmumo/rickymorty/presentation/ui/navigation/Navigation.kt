@@ -2,6 +2,7 @@ package com.alexmumo.rickymorty.presentation.ui.navigation
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -13,6 +14,7 @@ import com.alexmumo.rickymorty.presentation.ui.screens.search.SearchScreen
 import com.alexmumo.rickymorty.presentation.ui.screens.settings.SettingScreen
 import com.alexmumo.rickymorty.presentation.ui.screens.splash.SplashScreen
 
+@ExperimentalComposeUiApi
 @ExperimentalFoundationApi
 @Composable
 fun Navigation(navController: NavHostController) {

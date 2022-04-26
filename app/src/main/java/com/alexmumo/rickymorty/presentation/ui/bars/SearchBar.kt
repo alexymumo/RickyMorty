@@ -1,11 +1,16 @@
 package com.alexmumo.rickymorty.presentation.ui.bars
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.OutlinedTextField
-import androidx.compose.material.Text
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
@@ -14,9 +19,7 @@ import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.input.ImeAction
-import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @ExperimentalComposeUiApi
@@ -47,7 +50,7 @@ fun SearchBar(
                     Text(text = placeholder)
                 },
                 trailingIcon = {
-               },
+                },
                 maxLines = 1,
                 singleLine = true,
                 keyboardActions = KeyboardActions(
@@ -56,28 +59,13 @@ fun SearchBar(
                     }
                 ),
                 keyboardOptions = KeyboardOptions(
-                    capitalization = KeyboardCapitalization.Characters,
-                    autoCorrect = true,
                     keyboardType = KeyboardType.Text,
-                    imeAction = ImeAction.Default
+                    imeAction = ImeAction.Done
                 )
             )
         }
     }
-}
-
-@Composable
-fun NoSearchResults() {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text(text = "No Characters Found")
+    SideEffect {
+        focusRequest.requestFocus()
     }
-}
-
-@Preview
-@Composable
-fun SearchBarPreview() {
 }
