@@ -4,12 +4,14 @@ import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.navigation.NavController
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.alexmumo.rickymorty.presentation.ui.bars.SearchBar
 import com.alexmumo.rickymorty.presentation.ui.components.CharacterColumn
 import org.koin.androidx.compose.getViewModel
 
+@ExperimentalComposeUiApi
 @Composable
 fun SearchScreen(
     navController: NavController,
@@ -30,7 +32,7 @@ fun SearchScreen(
                 onValueChange = { name ->
                     viewModel.search(name)
                 },
-                placeholder = "Search Characters"
+                placeholder = "Search Characters",
             )
         }
     ) {

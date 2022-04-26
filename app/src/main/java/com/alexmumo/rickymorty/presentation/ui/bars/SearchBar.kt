@@ -5,14 +5,14 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
-import androidx.compose.material.TextFieldDefaults
-import androidx.compose.runtime.* // ktlint-disable no-wildcard-imports
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
-import androidx.compose.ui.focus.onFocusChanged
-import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
@@ -24,10 +24,9 @@ import androidx.compose.ui.unit.dp
 fun SearchBar(
     value: String,
     onValueChange: (String) -> Unit,
-    placeholder: String
+    placeholder: String,
 ) {
-    var showClearButton by remember { mutableStateOf(false) }
-    val keyboardController = LocalSoftwareKeyboardController.current
+    val focus = LocalFocusManager.current
     val focusRequest = remember { FocusRequester() } // remember the state of the focusRequester being used in the modifier
 
     Column {
@@ -38,29 +37,30 @@ fun SearchBar(
             OutlinedTextField(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 10.dp)
-                    .onFocusChanged { focusState ->
-                        showClearButton = (focusState.isFocused)
-                    },
+                    .focusRequester(focusRequester = focusRequest)
+                    .padding(vertical = 10.dp),
                 value = value,
-                onValueChange = {},
-                placeholder = {},
-                colors = TextFieldDefaults.textFieldColors(),
-                trailingIcon = {
+                onValueChange = { name ->
+                    onValueChange(name)
                 },
+                placeholder = {
+                    Text(text = placeholder)
+                },
+                trailingIcon = {
+               },
                 maxLines = 1,
                 singleLine = true,
+                keyboardActions = KeyboardActions(
+                    onDone = {
+                        focus.clearFocus()
+                    }
+                ),
                 keyboardOptions = KeyboardOptions(
                     capitalization = KeyboardCapitalization.Characters,
                     autoCorrect = true,
                     keyboardType = KeyboardType.Text,
                     imeAction = ImeAction.Default
-                ),
-                keyboardActions = KeyboardActions(
-                    onDone = {
-                        keyboardController?.hide()
-                    }
-                ),
+                )
             )
         }
     }
