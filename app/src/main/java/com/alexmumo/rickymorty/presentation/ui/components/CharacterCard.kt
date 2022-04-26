@@ -1,9 +1,6 @@
 package com.alexmumo.rickymorty.presentation.ui.components
 
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.animateContentSize
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
+import androidx.compose.animation.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.* // ktlint-disable no-wildcard-imports
 import androidx.compose.foundation.shape.CircleShape
@@ -22,11 +19,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.palette.graphics.Palette
 import coil.request.ImageRequest
 import coil.transform.Transformation
 import com.alexmumo.rickymorty.domain.models.Character
 import com.skydoves.landscapist.CircularReveal
 import com.skydoves.landscapist.coil.CoilImage
+import com.skydoves.landscapist.palette.BitmapPalette
 
 @Composable
 fun CharacterUI(
@@ -35,8 +34,12 @@ fun CharacterUI(
 ) {
     AnimatedVisibility(
         visible = true,
-        enter = fadeIn(),
-        exit = fadeOut()
+        enter = fadeIn(
+            initialAlpha = 0.3f
+        ) + expandVertically(
+            expandFrom = Alignment.Top
+        ),
+        exit = fadeOut() + shrinkVertically() + slideOutVertically()
     ) {
         Card(
             modifier = modifier

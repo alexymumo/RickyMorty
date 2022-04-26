@@ -30,19 +30,6 @@ fun TopBar() {
                 color = MaterialTheme.colors.onSurface,
                 style = MaterialTheme.typography.h6,
             )
-        },
-        navigationIcon = {
-            IconButton(onClick = { }) {
-                Icon(Icons.Filled.Menu, contentDescription = null)
-            }
-        },
-        actions = {
-            IconButton(onClick = {  }) {
-                Icon(Icons.Filled.Favorite, contentDescription = null)
-            }
-            IconButton(onClick = { }) {
-                Icon(Icons.Filled.Search, contentDescription = null)
-            }
         }
     )
 }

@@ -1,6 +1,7 @@
 package com.alexmumo.rickymorty.presentation.ui.screens.splash
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.wrapContentSize
@@ -26,6 +27,7 @@ fun SplashScreen(
 ) {
     LaunchedEffect(key1 = true) {
         delay(4000L)
+        navController.popBackStack()
         navController.navigate(NavigationItem.Home.route)
     }
     Column(

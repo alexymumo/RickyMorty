@@ -38,27 +38,3 @@ fun HomeScreen(
 fun HomeScreenPreview() {
     HomeScreenPreview()
 }
-
-/*
-@ExperimentalFoundationApi
-@Composable
-fun CharacterList(viewModel: HomeViewModel = getViewModel()) {
-    val state = viewModel.characterState.value
-    val lazyListState = rememberLazyListState()
-    val lazyGridState = rememberLazyGridState()
-
-    val characters = state.characterList?.collectAsLazyPagingItems()
-
-    if (state.errorMessage.isNotEmpty()) {
-        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-            Text(text = state.errorMessage)
-        }
-    }
-
-    characters?.let { items ->
-        // CharacterColumn(items = items, listState = lazyListState)
-        CharacterGrid(items = items, lazyGridState)
-    }
-}
-
- */
