@@ -44,6 +44,27 @@ and default parameters.
 - [kotlinx.coroutines](https://github.com/Kotlin/kotlinx.coroutines) - Library Support for coroutines,provides runBlocking coroutine builder used in tests.
 <br>
 
+  
+## Screenshots
+<table>
+<thead>
+<tr>
+<th align="center">Splash Screen</th>
+<th align="center">Character Grid</th>
+<th align="center">Dark Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="resources/splash.png" width="300"></td>
+<td><img src="resources/characters.png" width="300"></td>
+<td><img src="resources/dark.png" width="300"></td>
+</tr>
+</tbody>
+</table>
+
+<br>
+
 https://user-images.githubusercontent.com/56880898/164644979-5532265b-4e48-469c-9742-5a4cf2072080.mp4
 
 
