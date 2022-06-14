@@ -95,7 +95,7 @@ dependencies {
 
     //Kotlin coroutine
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1"
 
     // Coil
     implementation "io.coil-kt:coil-compose:$coil_version"
