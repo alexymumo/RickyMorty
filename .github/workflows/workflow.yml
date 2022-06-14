@@ -2,7 +2,7 @@ name: Build And Deploy App To Firebase Distribution
 
 on:
   push:
-    branches: [ architecture ]
+    branches: [ architecture,clean,compose,main ]
 
 jobs:
   build:
