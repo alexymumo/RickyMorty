@@ -16,7 +16,6 @@ import com.alexmumo.rickymorty.presentation.ui.theme.RickyMortyTheme
 @ExperimentalComposeUiApi
 class MainActivity : ComponentActivity() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
