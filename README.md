@@ -69,22 +69,4 @@ https://user-images.githubusercontent.com/56880898/164644979-5532265b-4e48-469c-
 
 
 
-## Screenshots
 
-## Screenshots
-<table>
-<thead>
-<tr>
-<th align="center">Splash Screen</th>
-<th align="center">Character Grid</th>
-<th align="center">Dark Mode</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img src="resources/splash.png" width="300"></td>
-<td><img src="resources/characters.png" width="300"></td>
-<td><img src="resources/dark.png" width="300"></td>
-</tr>
-</tbody>
-</table>
